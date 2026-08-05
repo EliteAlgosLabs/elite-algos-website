@@ -1,0 +1,360 @@
+@import 'tailwindcss';
+
+/*
+ * Bind Tailwind's `dark:` variant to our own theme attribute.
+ *
+ * Without this, `dark:` compiles to `@media (prefers-color-scheme: dark)` and
+ * would ignore an explicit user choice — a visitor on a light OS who picks dark
+ * mode would get our dark tokens but light `dark:` utilities. One source of
+ * truth: `<html data-theme>`.
+ */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/* ============================================================================
+   ELITE ALGOS LABS — DESIGN SYSTEM
+   ----------------------------------------------------------------------------
+   One file, three layers:
+     1. @theme      — primitive tokens Tailwind turns into utilities
+     2. :root       — semantic tokens that flip between light and dark
+     3. utilities   — a small set of composed primitives used across the site
+
+   Rule of thumb: components consume *semantic* tokens (bg-background,
+   text-muted, border-border), never raw palette values. That is what makes the
+   theme swap a one-line change and keeps light/dark honest.
+   ========================================================================== */
+
+@theme {
+  /* -- Brand gold ----------------------------------------------------------
+     Anchored on #C6A664, sampled directly from the master logo asset. The ramp
+     is warm and desaturated: brushed metal, never crypto-yellow. */
+  --color-gold-50: #fbf6ea;
+  --color-gold-100: #f5ead1;
+  --color-gold-200: #ebd9ae;
+  --color-gold-300: #dfc489;
+  --color-gold-400: #d2af6d;
+  --color-gold-500: #c6a664;
+  --color-gold-600: #a9853f;
+  --color-gold-700: #8a6a2f;
+  --color-gold-800: #6b5124;
+  --color-gold-900: #4e3b1b;
+  --color-gold-950: #2e2210;
+
+  /* -- Warm neutrals -------------------------------------------------------
+     Deliberately warm (hue ~40) so the greys sit with the gold instead of
+     fighting it. A cold neutral grey next to this gold reads cheap. */
+  --color-ink-50: #faf8f4;
+  --color-ink-100: #f4f0e8;
+  --color-ink-200: #e4ddd0;
+  --color-ink-300: #cec5b4;
+  --color-ink-400: #9a9287;
+  --color-ink-500: #6b6459;
+  --color-ink-600: #4a453d;
+  --color-ink-700: #2e2b27;
+  --color-ink-800: #1a1917;
+  --color-ink-900: #121110;
+  --color-ink-950: #0a0908;
+
+  /* -- Type ---------------------------------------------------------------- */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-newsreader), ui-serif, Georgia, serif;
+  --font-wordmark: var(--font-jost), var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  /* -- Motion --------------------------------------------------------------
+     Two curves only. `ease-out-expo` for entrances (fast start, long settle);
+     `ease-in-out-quint` for state changes. Consistency here is most of what
+     makes motion feel designed rather than assembled. */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
+
+  /* -- Layout -------------------------------------------------------------- */
+  --breakpoint-3xl: 100rem;
+}
+
+/* ============================================================================
+   SEMANTIC TOKENS
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* Referenced by the logo mark's gradient so it tracks the palette. */
+  --brand-gold-200: var(--color-gold-200);
+  --brand-gold-500: var(--color-gold-500);
+  --brand-gold-700: var(--color-gold-700);
+
+  --background: #fbf9f5; /* warm white */
+  --surface: #f4f0e8; /* soft ivory */
+  --elevated: #ffffff;
+  --foreground: #1a1815; /* charcoal black */
+  --muted: #6b6459;
+  --border: #e4ddd0;
+  --accent: #a9853f; /* luxury brushed Egyptian gold */
+  --accent-strong: #8a6a2f;
+  --accent-contrast: #fbf9f5;
+
+  /* Glass cards: a near-white wash over a soft warm shadow. */
+  --glass-bg: rgb(255 255 255 / 0.62);
+  --glass-border: rgb(26 24 21 / 0.07);
+  --glass-shadow: 0 1px 2px rgb(46 34 16 / 0.04), 0 8px 24px -8px rgb(46 34 16 / 0.08);
+  --glass-shadow-hover: 0 1px 2px rgb(46 34 16 / 0.05), 0 20px 48px -12px rgb(46 34 16 / 0.14);
+
+  /* Ambient field behind the hero and section transitions. */
+  --field-a: rgb(198 166 100 / 0.16);
+  --field-b: rgb(169 133 63 / 0.1);
+  --grid-line: rgb(26 24 21 / 0.045);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --background: #121110; /* rich graphite */
+  --surface: #1a1917; /* deep charcoal */
+  --elevated: #232120;
+  --foreground: #f5f2ec; /* soft white */
+  --muted: #9a9287;
+  --border: #2e2b27;
+  --accent: #e3ce9f; /* muted champagne gold */
+  --accent-strong: #efe0bd;
+  --accent-contrast: #121110;
+
+  --glass-bg: rgb(255 255 255 / 0.035);
+  --glass-border: rgb(255 255 255 / 0.08);
+  --glass-shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px -8px rgb(0 0 0 / 0.45);
+  --glass-shadow-hover: 0 1px 2px rgb(0 0 0 / 0.35), 0 20px 48px -12px rgb(0 0 0 / 0.6);
+
+  --field-a: rgb(227 206 159 / 0.1);
+  --field-b: rgb(198 166 100 / 0.07);
+  --grid-line: rgb(245 242 236 / 0.045);
+}
+
+/* Expose the semantic tokens to Tailwind as `bg-background`, `text-muted`, … */
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-elevated: var(--elevated);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-contrast: var(--accent-contrast);
+}
+
+/* ============================================================================
+   BASE
+   ========================================================================== */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: var(--border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Visible, on-brand focus ring. Never remove it — only shape it. */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: var(--accent-contrast);
+  }
+
+  /* Headline defaults: display serif, tight tracking, balanced wrapping. */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* ============================================================================
+   COMPOSED UTILITIES
+   ========================================================================== */
+
+@utility glass {
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+}
+
+/* Hairline gold rule — opens sections, underlines eyebrows. */
+@utility rule-gold {
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--accent) 18%,
+    var(--accent) 82%,
+    transparent
+  );
+}
+
+/* Brushed-metal text fill for display numerals and the hero wordmark. */
+@utility text-brushed {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-gold-700) 0%,
+    var(--color-gold-500) 26%,
+    var(--color-gold-200) 50%,
+    var(--color-gold-500) 74%,
+    var(--color-gold-700) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Engineering eyebrow: small, mono, wide-tracked, muted. */
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Precision grid — the engineering substrate under hero and CTA sections. */
+@utility grid-field {
+  background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* ============================================================================
+   KEYFRAMES
+   Only transform/opacity, so every one of these runs on the compositor.
+   ========================================================================== */
+
+/* Ambient gold wash behind hero and CTA sections. Two orbs on different
+   periods so the pair never visibly loops. */
+@keyframes drift-a {
+  0%,
+  100% {
+    transform: translate(-50%, 0) scale(1);
+  }
+  50% {
+    transform: translate(-46%, 4%) scale(1.12);
+  }
+}
+
+@keyframes drift-b {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1.05);
+  }
+  50% {
+    transform: translate(-6%, -5%) scale(0.94);
+  }
+}
+
+/* Slow metallic sweep across the wordmark on the hero. */
+@keyframes sheen {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+/* Scroll cue in the hero. */
+@keyframes scroll-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
+/* Dropdown / popover entrance. */
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Mobile drawer panel entrance. */
+@keyframes drawer-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Live-status pulse for the agent tiles in the dashboard. */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* ============================================================================
+   MOTION — REDUCED MOTION IS NON-NEGOTIABLE
+   Every animation in this codebase degrades to "instantly in its final state",
+   never to "invisible". Entrance components check the media query in JS too.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 100" fill="none" role="img" aria-label="Elite Algos Labs">
+  <title>Elite Algos Labs</title>
+  <!--
+    Geometry measured from the master brand asset, not traced by eye.
+    Stroke 14.5 on a 220x100 box == 50px on the 758x345 original.
+    Diagonals are exactly 45 degrees; both rings terminate at the centre (110,50).
+    Do not round these numbers - it breaks the mitre alignment at the vertex.
+  -->
+  <g stroke="#C6A664" stroke-width="14.5" stroke-linejoin="miter" stroke-miterlimit="10">
+    <path d="M 7.25 7.25 L 67.25 7.25 L 110 50 L 67.25 92.75 L 7.25 92.75 Z"/>
+    <path d="M 212.75 7.25 L 152.75 7.25 L 110 50 L 152.75 92.75 L 212.75 92.75 Z"/>
+  </g>
+</svg>

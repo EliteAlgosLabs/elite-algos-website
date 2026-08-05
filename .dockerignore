@@ -1,0 +1,21 @@
+# Keeps the build context small and — more importantly — keeps secrets and
+# local state out of the image entirely.
+node_modules
+.next
+.git
+.github
+.vscode
+.claude
+coverage
+npm-debug.log*
+.DS_Store
+
+# Never copy real environment files into an image.
+.env
+.env.*
+!.env.example
+
+# Docs and deploy config are not needed inside the runtime image.
+docs
+deploy
+README.md

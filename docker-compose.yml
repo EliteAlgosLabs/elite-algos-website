@@ -1,0 +1,67 @@
+# =============================================================================
+# Elite Algos Labs — Oracle deployment
+# -----------------------------------------------------------------------------
+#   docker compose up -d --build
+#
+# nginx terminates TLS and proxies to the app over an internal network. The app
+# container publishes NO host port: it is reachable only through nginx, so the
+# Node server is never exposed to the internet directly.
+# =============================================================================
+
+services:
+  web:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-https://elitealgoslabs.com}
+    image: elite-algos-website:latest
+    restart: unless-stopped
+    env_file: .env.production
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+    expose:
+      - '3000'
+    networks: [edge]
+    logging:
+      driver: json-file
+      options: { max-size: '10m', max-file: '3' }
+
+  nginx:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    depends_on:
+      web:
+        condition: service_healthy
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./deploy/nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - certbot-webroot:/var/www/certbot:ro
+      - certbot-certs:/etc/letsencrypt:ro
+    networks: [edge]
+    logging:
+      driver: json-file
+      options: { max-size: '10m', max-file: '3' }
+
+  # Renews the certificate every 12 hours. Certbot exits immediately when the
+  # certificate is not near expiry, so this is cheap.
+  certbot:
+    image: certbot/certbot:latest
+    restart: unless-stopped
+    volumes:
+      - certbot-webroot:/var/www/certbot
+      - certbot-certs:/etc/letsencrypt
+    entrypoint: >
+      sh -c "trap exit TERM;
+             while :; do certbot renew --webroot -w /var/www/certbot --quiet;
+             sleep 12h & wait $${!}; done"
+
+networks:
+  edge:
+    driver: bridge
+
+volumes:
+  certbot-webroot:
+  certbot-certs:
