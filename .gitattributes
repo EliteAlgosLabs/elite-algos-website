@@ -1,0 +1,23 @@
+# Normalise line endings.
+#
+# This repository is edited on Windows and deployed on Linux. Without this,
+# every file checked out on Windows comes back as modified (CRLF vs LF), the
+# working tree is permanently dirty, and diffs between machines are unreadable.
+#
+# `text=auto eol=lf` stores LF in the repository and checks out LF everywhere.
+# Shell scripts and Docker files MUST be LF or they break inside the container.
+* text=auto eol=lf
+
+# Binary — never touch these.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.avif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.pdf binary
+
+# Generated; collapse in pull request diffs.
+package-lock.json linguist-generated=true -diff
