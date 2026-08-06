@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
+import { AnalyticsBeacon } from '@/components/analytics/beacon'
 import { getDictionary } from '@/lib/i18n/dictionaries'
 import { isLocale } from '@/lib/i18n/config'
 
@@ -26,6 +27,7 @@ export default async function SiteLayout({ children, params }: LayoutProps<'/[lo
         {children}
       </main>
       <Footer locale={locale} dict={dict} />
+      <AnalyticsBeacon />
     </div>
   )
 }
