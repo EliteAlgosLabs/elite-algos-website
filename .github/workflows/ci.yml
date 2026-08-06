@@ -1,0 +1,69 @@
+name: CI
+
+# Runs on every push and pull request to main.
+#
+# Purpose: catch a broken build *before* it reaches the Oracle server, where the
+# only feedback is a failed deploy. Agents and humans both benefit — this is the
+# difference between "I think that change was fine" and knowing it was.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# A newer push supersedes an in-flight run on the same branch.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Typecheck · Lint · Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Lint
+        run: npx eslint .
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Build
+        # AUTH_SECRET is only read at runtime, but the module throws if it is
+        # absent, and prerendering imports it. A throwaway value is correct
+        # here: it never signs a real session.
+        env:
+          AUTH_SECRET: ci-placeholder-secret-not-used-for-real-sessions-000
+          NEXT_PUBLIC_SITE_URL: https://elitealgoslabs.com
+        run: npm run build
+
+      - name: Assert no secrets committed
+        # Cheap backstop. The repository is public; a leaked token here is a
+        # rotation emergency, so it is worth failing the build over.
+        run: |
+          if git grep -nIE "ghp_[A-Za-z0-9]{20,}|github_pat_|BEGIN [A-Z ]*PRIVATE KEY" -- . ; then
+            echo "::error::Possible secret committed"
+            exit 1
+          fi
+          if git ls-files | grep -E "^\.env" | grep -vq "^\.env\.example$" ; then
+            echo "::error::A real .env file is tracked"
+            exit 1
+          fi
+          echo "No secrets detected."
+
+      - name: Assert translation parity
+        # `tsc` already enforces this structurally. This check catches the other
+        # failure mode: a French key present but filled with the English string.
+        run: node scripts/check-translations.mjs
