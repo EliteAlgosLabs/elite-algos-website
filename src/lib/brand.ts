@@ -33,7 +33,11 @@ export const MARK_GEOMETRY = {
 export const COMPANY = {
   legalName: 'Elite Algos Labs LTD',
   shortName: 'Elite Algos Labs',
-  incorporationNumber: '12997849',
+  // Rwanda RDB company registration code / TIN, from the official Certificate of
+  // Domestic Company Registration (Office of the Registrar General), registered
+  // 2025-01-17. Verified against the certificate 2026-08-06. Public site shows
+  // country only (Rwanda) — no city, address, or personal names.
+  incorporationNumber: '129978496',
   domain: 'elitealgoslabs.com',
   url: 'https://elitealgoslabs.com',
   email: {

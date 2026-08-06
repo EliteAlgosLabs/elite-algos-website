@@ -273,7 +273,15 @@ export function PortfolioPreviewSection({
 }) {
   const t = dict.home.portfolio
 
-  if (caseStudies.length === 0) return null
+  // Never surface sample/placeholder case studies to visitors. The homepage
+  // presents these as "what we have shipped" with hard client metrics, so a
+  // fabricated entry here would be a material misrepresentation. Real work is
+  // added by removing the `sample` flag in src/lib/content/data/portfolio.ts,
+  // at which point this section reappears automatically. Until then it renders
+  // nothing rather than fake results. (Phase 2 production-readiness, 2026-08-06.)
+  const realCaseStudies = caseStudies.filter((study) => study.sample !== true)
+
+  if (realCaseStudies.length === 0) return null
 
   return (
     <Section>
@@ -281,15 +289,15 @@ export function PortfolioPreviewSection({
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading eyebrow={t.eyebrow} title={t.title} lead={t.lead} />
           <Reveal delay={0.18}>
-            <ArrowLink href={href(routes.portfolio, locale)}>{t.cta}</ArrowLink>
+            <ArrowLink href={href(routes.services, locale)}>{t.cta}</ArrowLink>
           </Reveal>
         </div>
 
         <Stagger className="mt-16 grid gap-6 lg:grid-cols-3">
-          {caseStudies.map((study) => (
+          {realCaseStudies.map((study) => (
             <StaggerItem key={study.slug}>
               <LinkCard
-                href={href(routes.portfolioCase(study.slug), locale)}
+                href={href(routes.services, locale)}
                 label={study.title[locale]}
                 className="flex h-full flex-col p-8"
               >

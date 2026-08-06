@@ -1,8 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { locales, localeMeta } from '@/lib/i18n/config'
 import { SITE_URL } from '@/lib/seo'
-import { caseStudies } from '@/lib/content/data/portfolio'
-import { posts } from '@/lib/content/data/insights'
 
 /**
  * Sitemap.
@@ -25,29 +23,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '', priority: 1, changeFrequency: 'weekly' },
     { path: '/solutions', priority: 0.9, changeFrequency: 'monthly' },
     { path: '/services', priority: 0.9, changeFrequency: 'monthly' },
-    { path: '/portfolio', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/about', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/insights', priority: 0.7, changeFrequency: 'weekly' },
     { path: '/contact', priority: 0.6, changeFrequency: 'monthly' },
+    // portfolio, insights, careers omitted while hidden from the live site
+    // (2026-08-06). Restore the entries here when the pages return.
   ]
 
-  const dynamicPaths: Entry[] = [
-    ...caseStudies.map((study) => ({
-      path: `/portfolio/${study.slug}`,
-      priority: 0.6,
-      changeFrequency: 'monthly' as const,
-    })),
-    ...posts
-      .filter((post) => post.status === 'published')
-      .map((post) => ({
-        path: `/insights/${post.slug}`,
-        priority: 0.6,
-        changeFrequency: 'monthly' as const,
-        lastModified: new Date(post.updatedAt ?? post.publishedAt),
-      })),
-  ]
-
-  const all: Entry[] = [...staticPaths, ...dynamicPaths]
+  const all: Entry[] = [...staticPaths]
 
   return all.flatMap((entry) =>
     locales.map((locale) => ({

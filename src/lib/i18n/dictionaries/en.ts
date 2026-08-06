@@ -361,7 +361,7 @@ export const en = {
       body1:
         'The gap between what artificial intelligence can do in a demonstration and what it reliably does inside an organisation is enormous — and almost entirely an engineering problem. Data boundaries, failure handling, observability, human review, cost control, drift, and the unglamorous work of making a system somebody else can maintain.',
       body2:
-        'Elite Algos Labs was formed to do that work properly. We build a small number of systems for a small number of organisations, and we build them to be depended upon. We are incorporated in the United Kingdom and we work with clients globally.',
+        'Elite Algos Labs was formed to do that work properly. We build a small number of systems for a small number of organisations, and we build them to be depended upon. We are incorporated in Rwanda and we work with clients globally.',
     },
     principles: {
       eyebrow: 'Standards',
@@ -375,7 +375,7 @@ export const en = {
       founded: 'Founded',
       foundedValue: '2025',
       jurisdiction: 'Registered',
-      jurisdictionValue: 'United Kingdom',
+      jurisdictionValue: 'Rwanda',
       reach: 'Client reach',
       reachValue: 'Global',
       languages: 'Operating languages',
@@ -575,6 +575,13 @@ export const en = {
     body: 'The address may be mistyped, or the page may have moved. Everything else is still where you left it.',
     action: 'Return home',
     secondary: 'Contact us',
+  },
+  error: {
+    code: 'Error',
+    title: 'Something went wrong.',
+    body: 'An unexpected error interrupted this page. The issue has been logged. You can try again, or head back home.',
+    retry: 'Try again',
+    action: 'Return home',
   },
 
   errorPage: {
@@ -855,6 +862,20 @@ export const en = {
         notifications: 'Notifications',
         integrations: 'Integrations',
         security: 'Security',
+        email: 'Email & SMTP',
+      },
+      email: {
+        title: 'Email delivery',
+        statusConfigured: 'Configured',
+        statusNotConfigured: 'Not configured',
+        statusConnected: 'Connected',
+        statusError: 'Connection error',
+        host: 'SMTP host',
+        port: 'Port',
+        inbox: 'Enquiries delivered to',
+        connectedHelp: 'The mail server accepted our credentials. Contact-form enquiries are delivered by email and visitors receive an acknowledgement.',
+        errorHelp: 'SMTP is configured but the server rejected the connection. Enquiries are still stored in the inbox; check the credentials and host.',
+        notConfiguredHelp: 'No SMTP credentials are set. The contact form still validates and stores every enquiry in the inbox, but no email is sent. Set SMTP_* in the environment to enable delivery.',
       },
       theme: 'Theme',
       themeLight: 'Light',

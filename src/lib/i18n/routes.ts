@@ -57,8 +57,7 @@ export function swapLocale(pathname: string, next: Locale): string {
 export const primaryNav = [
   { key: 'solutions', path: routes.solutions },
   { key: 'services', path: routes.services },
-  { key: 'portfolio', path: routes.portfolio },
   { key: 'about', path: routes.about },
-  { key: 'insights', path: routes.insights },
-  { key: 'careers', path: routes.careers },
+  // portfolio, insights, careers intentionally hidden from nav (2026-08-06).
+  // Re-add here to restore the menu entries when the pages go live again.
 ] as const satisfies ReadonlyArray<{ key: string; path: string }>

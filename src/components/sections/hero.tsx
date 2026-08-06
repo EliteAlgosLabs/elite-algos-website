@@ -91,7 +91,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               </Link>
 
               <Link
-                href={href(routes.portfolio, locale)}
+                href={href(routes.services, locale)}
                 className={cn(
                   'group inline-flex h-13 items-center justify-center gap-2 rounded-full px-8',
                   'border border-border bg-elevated/50 text-base font-medium text-foreground backdrop-blur-sm',

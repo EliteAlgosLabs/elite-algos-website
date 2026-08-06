@@ -6,6 +6,9 @@ import {
   type ContactResponse,
 } from '@/lib/contact/schema'
 import { submissions } from '@/lib/contact/store'
+import { sendMail, isMailConfigured } from '@/lib/email/mailer'
+import { operatorNotification, visitorAcknowledgement } from '@/lib/email/templates'
+import { COMPANY } from '@/lib/brand'
 
 /**
  * Contact endpoint.
@@ -91,6 +94,8 @@ export async function POST(request: NextRequest): Promise<NextResponse<ContactRe
     return NextResponse.json({ ok: false, formError: 'rateLimited' }, { status: 429 })
   }
 
+  const receivedAt = new Date().toISOString()
+
   try {
     await submissions.create({
       name: data.name,
@@ -99,7 +104,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<ContactRe
       topic: data.topic,
       budget: data.budget,
       message: data.message,
-      receivedAt: new Date().toISOString(),
+      receivedAt,
       userAgent: request.headers.get('user-agent') ?? undefined,
     })
   } catch (error) {
@@ -108,5 +113,92 @@ export async function POST(request: NextRequest): Promise<NextResponse<ContactRe
     return NextResponse.json({ ok: false, formError: 'serverError' }, { status: 500 })
   }
 
+  // Deliver the enquiry by email. This runs AFTER a successful store and is
+  // deliberately non-fatal: a mail failure is logged for the operator but must
+  // never turn a received enquiry into an error for the visitor — the
+  // submission is already safely persisted and visible in the dashboard inbox.
+  await deliverEnquiryEmails({
+    name: data.name,
+    email: data.email,
+    company: data.company || undefined,
+    topic: data.topic,
+    budget: data.budget,
+    message: data.message,
+    receivedAt,
+  })
+
   return NextResponse.json({ ok: true }, { status: 200 })
+}
+
+/* --------------------------------------------------------------------------
+   EMAIL DELIVERY
+   Fire the operator notification and the visitor acknowledgement. Structured,
+   never throwing: each outcome is logged so delivery failures are visible in
+   the container logs (and, in a later iteration, an alerting sink) without
+   affecting the visitor's response.
+   -------------------------------------------------------------------------- */
+
+type EnquiryEmailFields = {
+  name: string
+  email: string
+  company?: string
+  topic: ContactInput['topic']
+  budget?: ContactInput['budget']
+  message: string
+  receivedAt: string
+}
+
+async function deliverEnquiryEmails(fields: EnquiryEmailFields): Promise<void> {
+  if (!isMailConfigured()) {
+    // Not an error: the form is intentionally allowed to run without SMTP.
+    console.info(
+      '[contact] SMTP not configured; submission stored but not emailed',
+      { email: fields.email, topic: fields.topic },
+    )
+    return
+  }
+
+  // 1) Operator notification -> contact inbox, Reply-To the visitor.
+  const notification = operatorNotification(fields)
+  const inbox = process.env.CONTACT_INBOX?.trim() || COMPANY.email.business
+  const operatorResult = await sendMail({
+    to: inbox,
+    subject: notification.subject,
+    html: notification.html,
+    text: notification.text,
+    replyTo: `${fields.name} <${fields.email}>`,
+  })
+  if (operatorResult.ok) {
+    console.info('[contact] operator notification sent', {
+      messageId: operatorResult.messageId,
+      to: inbox,
+    })
+  } else if (!operatorResult.skipped) {
+    console.error('[contact] operator notification FAILED', {
+      to: inbox,
+      error: operatorResult.error,
+    })
+  }
+
+  // 2) Visitor acknowledgement -> the visitor. A failure here is low severity;
+  //    the enquiry is already received and the operator has been notified.
+  const ack = visitorAcknowledgement({ name: fields.name })
+  const ackResult = await sendMail({
+    to: fields.email,
+    subject: ack.subject,
+    html: ack.html,
+    text: ack.text,
+    replyTo: COMPANY.email.business,
+  })
+  if (ackResult.ok) {
+    console.info('[contact] visitor acknowledgement sent', {
+      messageId: ackResult.messageId,
+      to: fields.email,
+    })
+  } else if (!ackResult.skipped) {
+    console.warn('[contact] visitor acknowledgement failed', {
+      to: fields.email,
+      error: ackResult.error,
+    })
+  }
 }

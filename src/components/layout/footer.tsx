@@ -108,9 +108,11 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           <p className="font-mono text-[0.6875rem] tracking-[0.08em] text-muted">
             © {year} {COMPANY.legalName}. {dict.footer.rights}
           </p>
-          <p className="font-mono text-[0.6875rem] tracking-[0.08em] text-muted">
-            {dict.footer.incorporation} {COMPANY.incorporationNumber}
-          </p>
+          {COMPANY.incorporationNumber ? (
+            <p className="font-mono text-[0.6875rem] tracking-[0.08em] text-muted">
+              {dict.footer.incorporation} {COMPANY.incorporationNumber}
+            </p>
+          ) : null}
         </div>
       </Container>
     </footer>

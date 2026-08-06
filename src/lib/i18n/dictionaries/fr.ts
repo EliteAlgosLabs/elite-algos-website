@@ -358,7 +358,7 @@ export const fr: Dictionary = {
       body1:
         'L’écart entre ce que l’intelligence artificielle sait faire en démonstration et ce qu’elle accomplit réellement au sein d’une organisation est immense — et il relève presque entièrement de l’ingénierie. Frontières de données, gestion des défaillances, observabilité, revue humaine, maîtrise des coûts, dérive des modèles, et le travail ingrat consistant à rendre un système maintenable par quelqu’un d’autre.',
       body2:
-        'Elite Algos Labs a été fondée pour faire ce travail correctement. Nous construisons un petit nombre de systèmes pour un petit nombre d’organisations, et nous les construisons pour qu’on puisse s’y fier. Nous sommes immatriculés au Royaume-Uni et travaillons avec des clients dans le monde entier.',
+        'Elite Algos Labs a été fondée pour faire ce travail correctement. Nous construisons un petit nombre de systèmes pour un petit nombre d’organisations, et nous les construisons pour qu’on puisse s’y fier. Nous sommes immatriculés au Rwanda et travaillons avec des clients dans le monde entier.',
     },
     principles: {
       eyebrow: 'Exigences',
@@ -372,7 +372,7 @@ export const fr: Dictionary = {
       founded: 'Fondée en',
       foundedValue: '2025',
       jurisdiction: 'Immatriculée',
-      jurisdictionValue: 'Royaume-Uni',
+      jurisdictionValue: 'Rwanda',
       reach: 'Portée client',
       reachValue: 'Mondiale',
       languages: 'Langues de travail',
@@ -572,6 +572,13 @@ export const fr: Dictionary = {
     body: 'L’adresse est peut-être mal saisie, ou la page a été déplacée. Tout le reste est resté à sa place.',
     action: 'Retour à l’accueil',
     secondary: 'Nous contacter',
+  },
+  error: {
+    code: 'Erreur',
+    title: 'Une erreur est survenue.',
+    body: 'Une erreur inattendue a interrompu cette page. L’incident a été consigné. Vous pouvez réessayer ou revenir à l’accueil.',
+    retry: 'Réessayer',
+    action: 'Retour à l’accueil',
   },
 
   errorPage: {
@@ -863,6 +870,20 @@ export const fr: Dictionary = {
         notifications: 'Notifications',
         integrations: 'Intégrations',
         security: 'Sécurité',
+        email: 'Email & SMTP',
+      },
+      email: {
+        title: 'Livraison des emails',
+        statusConfigured: 'Configuré',
+        statusNotConfigured: 'Non configuré',
+        statusConnected: 'Connecté',
+        statusError: 'Erreur de connexion',
+        host: 'Serveur SMTP',
+        port: 'Port',
+        inbox: 'Demandes livrées à',
+        connectedHelp: 'Le serveur de messagerie a accepté nos identifiants. Les demandes du formulaire de contact sont livrées par email et les visiteurs reçoivent un accusé de réception.',
+        errorHelp: 'Le SMTP est configuré mais le serveur a rejeté la connexion. Les demandes sont toujours enregistrées dans la boîte de réception ; vérifiez les identifiants et le serveur.',
+        notConfiguredHelp: 'Aucun identifiant SMTP n’est défini. Le formulaire de contact valide et enregistre chaque demande dans la boîte de réception, mais aucun email n’est envoyé. Définissez SMTP_* dans l’environnement pour activer la livraison.',
       },
       theme: 'Thème',
       themeLight: 'Clair',

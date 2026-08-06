@@ -35,7 +35,12 @@ export default async function AboutPage({ params }: PageProps<'/[locale]/about'>
   ]
 
   const facts = [
-    { term: t.numbers.incorporation, value: COMPANY.incorporationNumber },
+    // Incorporation number is shown only when a real value is configured; an
+    // empty COMPANY.incorporationNumber omits the row rather than showing a
+    // placeholder (Phase 2, 2026-08-06).
+    ...(COMPANY.incorporationNumber
+      ? [{ term: t.numbers.incorporation, value: COMPANY.incorporationNumber }]
+      : []),
     { term: t.numbers.founded, value: t.numbers.foundedValue },
     { term: t.numbers.jurisdiction, value: t.numbers.jurisdictionValue },
     { term: t.numbers.reach, value: t.numbers.reachValue },

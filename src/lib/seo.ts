@@ -64,7 +64,13 @@ export function buildMetadata({
     ['x-default', `${SITE_URL}/en${cleanPath}`],
   ])
 
-  const ogImage = overrides?.image ?? `${SITE_URL}/og/${locale}${cleanPath || '/home'}.png`
+  // Open Graph imagery is provided by the auto-wired `opengraph-image.tsx`
+  // route (one per locale), which Next injects into the metadata for every
+  // page under `(site)`. We therefore only set `images` here when a page passes
+  // an explicit override (e.g. an article hero); otherwise we leave it unset so
+  // Next's generated image is used rather than a hardcoded — and previously
+  // non-existent — PNG path.
+  const ogImageOverride = overrides?.image
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -89,14 +95,16 @@ export function buildMetadata({
       url: canonical,
       locale: localeMeta[locale].tag,
       alternateLocale: locales.filter((c) => c !== locale).map((c) => localeMeta[c].tag),
-      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
+      ...(ogImageOverride
+        ? { images: [{ url: ogImageOverride, width: 1200, height: 630, alt: title }] }
+        : {}),
       ...(overrides?.publishedTime ? { publishedTime: overrides.publishedTime } : {}),
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: [ogImage],
+      ...(ogImageOverride ? { images: [ogImageOverride] } : {}),
     },
     authors: overrides?.authors?.map((name) => ({ name })) ?? [{ name: COMPANY.legalName }],
     creator: COMPANY.legalName,
@@ -125,9 +133,11 @@ export function organisationJsonLd(locale: Locale, dict: Dictionary) {
     logo: `${SITE_URL}/brand/mark.svg`,
     description: dict.meta.home.description,
     email: COMPANY.email.business,
-    identifier: COMPANY.incorporationNumber,
+    ...(COMPANY.incorporationNumber
+      ? { identifier: COMPANY.incorporationNumber }
+      : {}),
     sameAs: [COMPANY.github.url],
-    address: { '@type': 'PostalAddress', addressCountry: 'GB' },
+    address: { '@type': 'PostalAddress', addressCountry: 'RW' },
     contactPoint: [
       {
         '@type': 'ContactPoint',
