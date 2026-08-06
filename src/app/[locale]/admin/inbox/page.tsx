@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { PageHeader, Panel, PlaceholderNotice, DataTable, Badge } from '@/components/admin/primitives'
+import { PageHeader, Panel, DataTable, Badge } from '@/components/admin/primitives'
 import { getDictionary } from '@/lib/i18n/dictionaries'
 import { isLocale } from '@/lib/i18n/config'
 import { requirePermission } from '@/lib/auth/guard'
@@ -19,21 +19,6 @@ export default async function InboxPage({ params }: PageProps<'/[locale]/admin/i
   return (
     <>
       <PageHeader title={t.title} subtitle={t.subtitle} />
-
-      <div className="mb-6">
-        <PlaceholderNotice
-          message={
-            locale === 'fr'
-              ? 'Les messages sont conservés en mémoire et ne survivent pas à un redémarrage.'
-              : 'Submissions are held in memory and do not survive a restart.'
-          }
-          detail={
-            locale === 'fr'
-              ? 'Le formulaire de contact fonctionne de bout en bout, mais la persistance est volontairement laissée ouverte. Branchez un adaptateur email ou une base de données dans src/lib/contact/store.ts avant de compter sur cette boîte de réception.'
-              : 'The contact form works end to end, but persistence is deliberately left open. Wire an email adapter or a database into src/lib/contact/store.ts before relying on this inbox.'
-          }
-        />
-      </div>
 
       <Panel>
         <DataTable<Submission>
