@@ -52,9 +52,9 @@ export function Section({
       className={cn(
         'relative',
         tone === 'surface' && 'bg-surface',
-        spacing === 'tight' && 'py-16 sm:py-20',
-        spacing === 'default' && 'py-24 sm:py-32 lg:py-40',
-        spacing === 'loose' && 'py-32 sm:py-40 lg:py-52',
+        spacing === 'tight' && 'py-12 sm:py-14',
+        spacing === 'default' && 'py-16 sm:py-20 lg:py-24',
+        spacing === 'loose' && 'py-20 sm:py-24 lg:py-32',
         className,
       )}
     >
