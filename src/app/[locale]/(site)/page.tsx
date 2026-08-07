@@ -6,8 +6,6 @@ import {
   MissionSection,
   PhilosophySection,
   PortfolioPreviewSection,
-  ServicesSection,
-  SolutionsSection,
   WhySection,
 } from '@/components/sections/home-sections'
 import { getDictionary } from '@/lib/i18n/dictionaries'
@@ -28,10 +26,8 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
 
   // Fetched in parallel — these are independent reads and awaiting them in
   // sequence would serialise for no reason.
-  const [dict, services, solutions, caseStudies] = await Promise.all([
+  const [dict, caseStudies] = await Promise.all([
     getDictionary(locale),
-    content.listServices(),
-    content.listSolutions({ featuredOnly: true }),
     content.listCaseStudies({ featuredOnly: true, limit: 3 }),
   ])
 
@@ -48,10 +44,8 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
 
       <Hero locale={locale} dict={dict} />
       <MissionSection dict={dict} />
-      <ServicesSection locale={locale} dict={dict} services={services} />
       <WhySection dict={dict} />
       <PhilosophySection dict={dict} />
-      <SolutionsSection locale={locale} dict={dict} solutions={solutions.slice(0, 4)} />
       <PortfolioPreviewSection locale={locale} dict={dict} caseStudies={caseStudies} />
       <CtaSection locale={locale} dict={dict} />
     </>
