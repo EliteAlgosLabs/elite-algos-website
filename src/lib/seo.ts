@@ -87,6 +87,14 @@ export function buildMetadata({
           follow: true,
           googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
         },
+    // Search engine ownership verification. Rendered in <head> on every page.
+    // Bing Webmaster Tools (msvalidate.01); Google (google-site-verification)
+    // is added once the GSC token is issued.
+    verification: {
+      other: {
+        'msvalidate.01': 'A6AA40165EF7C19F629A77572FF5B785',
+      },
+    },
     openGraph: {
       type: overrides?.type ?? 'website',
       siteName: COMPANY.legalName,
