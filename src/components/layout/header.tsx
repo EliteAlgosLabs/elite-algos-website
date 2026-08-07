@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import { ArrowUpRight, Menu, X } from 'lucide-react'
 import { Logo } from '@/components/brand/logo'
 import { LocaleSwitcher } from './locale-switcher'
+import { LocaleToggle } from './locale-toggle'
 import { ThemeToggle } from './theme-toggle'
 import { useI18n } from '@/components/providers/i18n-provider'
 import { useScrolled } from '@/lib/hooks/use-scrolled'
@@ -105,8 +106,17 @@ export function Header() {
           </ul>
 
           <div className="flex items-center gap-1">
+            {/* Desktop / tablet: compact globe dropdown to save space. */}
             <div className="hidden items-center gap-1 sm:flex">
               <LocaleSwitcher />
+              <ThemeToggle />
+            </div>
+
+            {/* Phone: always-visible EN | FR toggle in the top bar, so a
+                visitor can switch language in one tap without opening the
+                menu. Sits next to the theme toggle and the menu button. */}
+            <div className="flex items-center gap-1 sm:hidden">
+              <LocaleToggle />
               <ThemeToggle />
             </div>
 
@@ -194,9 +204,11 @@ export function Header() {
               <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
             </Link>
 
-            <div className="mt-6 flex items-center justify-between border-t border-border pt-6 sm:hidden">
-              <LocaleSwitcher />
-              <ThemeToggle />
+            <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-6 sm:hidden">
+              <span className="font-mono text-[0.625rem] uppercase tracking-[0.14em] text-muted">
+                {t.common.changeLanguage}
+              </span>
+              <LocaleToggle />
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server'
-import { isLocale, locales, negotiateLocale } from '@/lib/i18n/config'
+import { isLocale, locales, localeForCountry, negotiateLocale } from '@/lib/i18n/config'
 
 /**
  * Proxy — formerly `middleware.ts`. Renamed in Next.js 16; the named export must
@@ -71,13 +71,25 @@ export function proxy(request: NextRequest): NextResponse {
     return response
   }
 
-  // No locale in the path. Prefer a previously chosen language, then the
-  // browser's Accept-Language, then English.
+  // No locale in the path. Choose the language in this order of priority:
+  //   1. A language the visitor previously chose (cookie) — an explicit choice
+  //      always wins.
+  //   2. The browser's own Accept-Language — the strongest signal of what the
+  //      person actually reads.
+  //   3. The visitor's country (via Cloudflare's CF-IPCountry header) — so a
+  //      first-time visitor from a French-speaking country lands on /fr even if
+  //      their browser sends no useful language.
+  //   4. English.
   const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value
+  const acceptLanguage = request.headers.get('accept-language')
+  const countryLocale = localeForCountry(request.headers.get('cf-ipcountry'))
+
   const locale =
     cookieLocale && isLocale(cookieLocale)
       ? cookieLocale
-      : negotiateLocale(request.headers.get('accept-language'))
+      : acceptLanguage
+        ? negotiateLocale(acceptLanguage)
+        : (countryLocale ?? negotiateLocale(acceptLanguage))
 
   const url = request.nextUrl.clone()
   url.pathname = `/${locale}${pathname === '/' ? '' : pathname}`

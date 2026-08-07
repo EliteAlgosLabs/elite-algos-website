@@ -38,6 +38,37 @@ export function isLocale(value: string): value is Locale {
 }
 
 /**
+ * Countries where French is an official / dominant language. A first-time
+ * visitor coming from one of these lands on `/fr`; everyone else defaults to
+ * English. This is a first-visit convenience only — an explicit language choice
+ * (stored in a cookie) and the browser's own Accept-Language always take
+ * priority over this list.
+ *
+ * ISO 3166-1 alpha-2 codes. Covers France, Belgium, Switzerland, Luxembourg,
+ * Monaco, Québec (Canada is handled by browser language, not here) and the
+ * Francophone countries of Africa most relevant to our market.
+ */
+const FRENCH_COUNTRIES = new Set<string>([
+  'FR', 'BE', 'CH', 'LU', 'MC', // Western Europe
+  'CD', 'CG', 'CI', 'CM', 'SN', 'ML', 'BF', 'NE', 'GN', 'TG', 'BJ', 'GA',
+  'TD', 'CF', 'DJ', 'KM', 'MG', 'RW', 'BI', 'MR', 'GQ', // Africa (incl. Rwanda, Burundi)
+  'HT', 'GP', 'MQ', 'GF', 'RE', 'YT', 'NC', 'PF', // Caribbean / overseas
+])
+
+/**
+ * Best locale for a visitor from a given country code (e.g. Cloudflare's
+ * `CF-IPCountry` header). Returns null when the country does not clearly map
+ * to a non-default language, so the caller can fall back to Accept-Language.
+ */
+export function localeForCountry(country: string | null): Locale | null {
+  if (!country) return null
+  const code = country.trim().toUpperCase()
+  if (code === 'XX' || code === 'T1' || code.length !== 2) return null // unknown / Tor
+  if (FRENCH_COUNTRIES.has(code)) return 'fr'
+  return null
+}
+
+/**
  * Negotiates the best locale from an `Accept-Language` header.
  *
  * Deliberately dependency-free: the full BCP 47 lookup algorithm is overkill
