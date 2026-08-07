@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server'
-import { isLocale, locales, localeForCountry, negotiateLocale } from '@/lib/i18n/config'
+import { defaultLocale, isLocale, locales, localeForCountry, negotiateLocale } from '@/lib/i18n/config'
 
 /**
  * Proxy — formerly `middleware.ts`. Renamed in Next.js 16; the named export must
@@ -74,22 +74,39 @@ export function proxy(request: NextRequest): NextResponse {
   // No locale in the path. Choose the language in this order of priority:
   //   1. A language the visitor previously chose (cookie) — an explicit choice
   //      always wins.
-  //   2. The browser's own Accept-Language — the strongest signal of what the
-  //      person actually reads.
+  //   2. A browser that explicitly asks for a non-default language
+  //      (Accept-Language) — if someone's phone is set to French, honour it
+  //      wherever they are.
   //   3. The visitor's country (via Cloudflare's CF-IPCountry header) — so a
-  //      first-time visitor from a French-speaking country lands on /fr even if
-  //      their browser sends no useful language.
+  //      first-time visitor from a French-speaking country (e.g. Rwanda,
+  //      France) lands on /fr even when their browser only says English or
+  //      says nothing useful.
   //   4. English.
   const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value
   const acceptLanguage = request.headers.get('accept-language')
   const countryLocale = localeForCountry(request.headers.get('cf-ipcountry'))
 
-  const locale =
-    cookieLocale && isLocale(cookieLocale)
-      ? cookieLocale
-      : acceptLanguage
-        ? negotiateLocale(acceptLanguage)
-        : (countryLocale ?? negotiateLocale(acceptLanguage))
+  let locale: (typeof locales)[number]
+  if (cookieLocale && isLocale(cookieLocale)) {
+    // 1. Respect an explicit past choice above everything else.
+    locale = cookieLocale
+  } else {
+    const browserLocale = negotiateLocale(acceptLanguage)
+    // `negotiateLocale` returns the default ('en') both when the browser asks
+    // for English *and* when it asks for nothing. We only want to let the
+    // browser override the country when it explicitly names a non-default
+    // language it prefers — otherwise the country signal should win.
+    if (browserLocale !== defaultLocale) {
+      // 2. Browser explicitly prefers a non-default language (e.g. French).
+      locale = browserLocale
+    } else if (countryLocale) {
+      // 3. Country maps to a specific language (French-speaking country).
+      locale = countryLocale
+    } else {
+      // 4. Fall back to the browser result (English / default).
+      locale = browserLocale
+    }
+  }
 
   const url = request.nextUrl.clone()
   url.pathname = `/${locale}${pathname === '/' ? '' : pathname}`
