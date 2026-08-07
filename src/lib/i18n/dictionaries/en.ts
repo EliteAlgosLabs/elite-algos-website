@@ -18,8 +18,8 @@ export const en = {
   common: {
     company: 'Elite Algos Labs',
     companyLegal: 'Elite Algos Labs LTD',
-    tagline: 'Building the foundations of global intelligence.',
-    taglineShort: 'Precision. Trust. Innovation.',
+    tagline: 'We build AI and software that helps your business work better.',
+    taglineShort: 'Clear. Reliable. Built to last.',
     sealMotto: 'Precision · Enterprise Intelligence',
     sealSub: 'Engineering smart algorithms',
 
@@ -79,44 +79,44 @@ export const en = {
   // ==========================================================================
   meta: {
     home: {
-      title: 'Elite Algos Labs — Engineering intelligent software',
+      title: 'Elite Algos Labs — AI and software for your business',
       description:
-        'We design and build artificial intelligence systems, autonomous agents and enterprise automation that organisations trust in production. Precision engineering for a global market.',
+        'We build AI and software that businesses, governments and institutions use every day. From smart automation to custom software, we help you save time, cut manual work and make better decisions.',
     },
     solutions: {
       title: 'Solutions',
       description:
-        'Production-grade AI platforms: intelligent agents, document understanding, enterprise automation, private deployments and data intelligence — engineered for scale and auditability.',
+        'AI tools that solve real business problems: AI assistants, document processing, workflow automation, private AI you control, and clear answers from your own data.',
     },
     services: {
       title: 'Services',
       description:
-        'AI consulting, custom platform engineering, systems integration and cloud infrastructure. Senior engineers, measurable outcomes, no hand-offs to junior teams.',
+        'AI advice, custom software, adding AI to systems you already use, and cloud setup. You work directly with senior engineers — no junior hand-offs.',
     },
     portfolio: {
       title: 'Portfolio',
       description:
-        'Selected work from Elite Algos Labs — case studies with real measured outcomes across document intelligence, autonomous agents and enterprise automation.',
+        'Selected work from Elite Algos Labs, with the real results our clients measured across document processing, AI assistants and automation.',
     },
     about: {
       title: 'About',
       description:
-        'Elite Algos Labs is an AI engineering company building systems that businesses, governments and institutions rely on. Our principles, our standards and how we work.',
+        'Elite Algos Labs is an AI and software company that businesses, governments and institutions rely on. Here is what we believe and how we work.',
     },
     contact: {
       title: 'Contact',
       description:
-        'Talk to the engineers who will build your system. Tell us what you are trying to achieve and we will tell you honestly whether we can help.',
+        'Talk to the engineers who will build your system. Tell us what you want to achieve and we will tell you honestly whether we can help.',
     },
     careers: {
       title: 'Careers',
       description:
-        'We are assembling a small team of exceptional engineers, designers and researchers. Roles open soon — register your interest.',
+        'We are building a small team of talented engineers, designers and researchers. Roles open soon — tell us you are interested.',
     },
     insights: {
       title: 'Insights',
       description:
-        'Engineering notes, architecture decisions and field research from the Elite Algos Labs team. Written by the people doing the work.',
+        'Practical notes and lessons from the Elite Algos Labs team, written by the people doing the work.',
     },
     notFound: {
       title: 'Page not found',
@@ -129,117 +129,117 @@ export const en = {
   // ==========================================================================
   home: {
     hero: {
-      eyebrow: 'Artificial intelligence engineering',
-      titleLine1: 'Intelligence,',
-      titleLine2: 'engineered.',
-      lead: 'Elite Algos Labs builds artificial intelligence systems that organisations run in production — autonomous agents, document understanding, and enterprise automation designed to be trusted, audited and depended upon.',
+      eyebrow: 'AI and software engineering',
+      titleLine1: 'AI and software',
+      titleLine2: 'for your business.',
+      lead: 'Elite Algos Labs builds AI and software that businesses use every day — AI assistants, document processing and automation that saves time, cuts manual work and helps your team move faster.',
       primaryCta: 'Start a conversation',
-      secondaryCta: 'Explore our work',
+      secondaryCta: 'See our work',
       scrollHint: 'Scroll',
     },
 
     mission: {
-      eyebrow: 'Mission',
-      title: 'We build the systems intelligence runs on.',
-      body: 'Most artificial intelligence never survives contact with production. It demos beautifully and fails quietly — unmonitored, unowned, unable to explain itself. We exist to close that gap. Every system we ship is designed for the day it is relied upon: observable, reversible, and accountable to the people whose work depends on it.',
+      eyebrow: 'What we believe',
+      title: 'We build AI that actually works in the real world.',
+      body: 'A lot of AI looks great in a demo, then fails once it meets real work. We build the kind that lasts. Every system we deliver is made to be trusted from day one: you can see what it is doing, undo it if needed, and rely on it for real business.',
       pillars: {
         precision: {
           title: 'Precision',
-          body: 'Systems are specified before they are built and measured after they ship. We report what the numbers actually say.',
+          body: 'We agree what success looks like before we build, then measure it after. We tell you what the numbers really say.',
         },
         trust: {
           title: 'Trust',
-          body: 'Auditable decisions, explicit data boundaries and deployments you fully control — including entirely inside your own infrastructure.',
+          body: 'You can see how every decision was made, you control where your data goes, and you can run everything on your own systems if you want.',
         },
         longevity: {
-          title: 'Longevity',
-          body: 'We write software meant to be maintained by people who were not in the room. Documented, typed, and boring in all the right places.',
+          title: 'Built to last',
+          body: 'We write software your own team can keep running long after we finish. Clear, well documented and easy to maintain.',
         },
       },
     },
 
     services: {
       eyebrow: 'What we do',
-      title: 'Engineering across the full intelligence stack.',
-      lead: 'From the model layer to the interface your team uses every morning.',
+      title: 'Everything you need, from idea to working system.',
+      lead: 'From the AI behind the scenes to the screens your team uses every morning.',
       cta: 'All services',
     },
 
     why: {
       eyebrow: 'Why Elite Algos Labs',
-      title: 'Senior engineers. Measured outcomes. No hand-offs.',
-      lead: 'What changes when the people who scoped your system are the people who build it.',
+      title: 'Senior engineers. Real results. No hand-offs.',
+      lead: 'The people who plan your project are the same people who build it.',
       points: {
         seniority: {
-          title: 'The people who scope it, build it',
-          body: 'No pyramid staffing. The engineers in your first conversation are the engineers writing the code — and the ones you call in eighteen months.',
+          title: 'The people who plan it, build it',
+          body: 'The engineers you meet in the first conversation are the ones who write the code — and the ones you can still call a year later.',
         },
         ownership: {
           title: 'You own everything',
-          body: 'Source code, model weights where applicable, infrastructure definitions and documentation. No lock-in, no black boxes, no hostage data.',
+          body: 'The code, the setup and the documentation are all yours. No lock-in, no hidden parts, no holding your data hostage.',
         },
         measurement: {
-          title: 'Outcomes, not activity',
-          body: 'We agree the metric that defines success before we start, instrument it, and report it honestly — including when it disappoints.',
+          title: 'Results, not busywork',
+          body: 'We agree on how we measure success before we start, track it, and report it honestly — even when the news is not great.',
         },
         sovereignty: {
           title: 'Your data stays yours',
-          body: 'Private and on-premise deployments are a first-class option, not an afterthought. Some workloads must never leave your building.',
+          body: 'We can run everything on your own servers when you need it. Some data should never leave your building, and that is fine.',
         },
       },
     },
 
     philosophy: {
-      eyebrow: 'Engineering philosophy',
-      title: 'Build for decades, not quarters.',
-      lead: 'Five commitments that shape every technical decision we make.',
+      eyebrow: 'How we work',
+      title: 'We build for years, not quarters.',
+      lead: 'Five rules behind every decision we make.',
       principles: {
         one: {
           index: '01',
-          title: 'Correctness before cleverness',
-          body: 'A system that is simple and right beats one that is ingenious and fragile. We optimise for the engineer who inherits this in three years.',
+          title: 'Get it right before getting clever',
+          body: 'Simple and correct beats clever and fragile. We build so the next person can understand and maintain it years from now.',
         },
         two: {
           index: '02',
-          title: 'Make the system explain itself',
-          body: 'Every automated decision should be traceable to its inputs. If we cannot explain an output, we do not ship it into a workflow that matters.',
+          title: 'The system should explain itself',
+          body: 'You should always be able to see why the system made a decision. If we cannot explain a result, we do not put it into important work.',
         },
         three: {
           index: '03',
-          title: 'Design for the failure case',
-          body: 'Models drift, APIs disappear, networks partition. We engineer the degraded path deliberately instead of discovering it in production.',
+          title: 'Plan for things going wrong',
+          body: 'Tools fail, connections drop, data changes. We plan for the bad day on purpose, so it does not surprise you later.',
         },
         four: {
           index: '04',
-          title: 'Documentation is part of the deliverable',
-          body: 'Architecture decisions, trade-offs and rejected alternatives are recorded as the work happens. Institutional memory is infrastructure.',
+          title: 'Documentation is part of the job',
+          body: 'We write down how things work and why we made each choice, as we go. That knowledge stays with you.',
         },
         five: {
           index: '05',
-          title: 'Earn the right to automate',
-          body: 'We measure the manual process before replacing it. Automation without a baseline is a guess wearing a suit.',
+          title: 'Measure before you automate',
+          body: 'We measure how the manual work is done today before we replace it. Automating without measuring first is just guessing.',
         },
       },
     },
 
     solutions: {
-      eyebrow: 'Featured solutions',
-      title: 'Platforms, not prototypes.',
-      lead: 'Systems we have engineered and can deploy for your organisation.',
+      eyebrow: 'What we can build',
+      title: 'Real systems, not just demos.',
+      lead: 'Solutions we have built before and can set up for your organisation.',
       cta: 'All solutions',
     },
 
     portfolio: {
-      eyebrow: 'Selected work',
-      title: 'Measured results.',
-      lead: 'A sample of what we have shipped, with the numbers that mattered to the client.',
+      eyebrow: 'Our work',
+      title: 'Real results.',
+      lead: 'A sample of what we have delivered, with the numbers that mattered to the client.',
       cta: 'View portfolio',
     },
 
     cta: {
       eyebrow: 'Start here',
-      title: 'Tell us what you are trying to achieve.',
-      body: 'Not a sales call. A technical conversation with the engineers who would build your system — and an honest answer about whether we are the right team for it.',
+      title: 'Tell us what you want to achieve.',
+      body: 'This is not a sales call. It is a straight conversation with the engineers who would build your system — and an honest answer about whether we are the right team for the job.',
       primary: 'Start a conversation',
       secondary: 'hello@elitealgoslabs.com',
     },
@@ -251,15 +251,15 @@ export const en = {
   solutions: {
     hero: {
       eyebrow: 'Solutions',
-      title: 'Systems engineered for production.',
-      lead: 'Each of these is a platform we have designed, built and operated. They are starting points shaped around your requirements, not licences sold off a shelf.',
+      title: 'What we can build for you.',
+      lead: 'Each of these is something we have already built and run. They are starting points that we shape around your needs — not fixed products sold off a shelf.',
     },
-    capabilitiesLabel: 'Capabilities',
-    outcomesLabel: 'Typical outcomes',
-    stackLabel: 'Representative stack',
+    capabilitiesLabel: 'What it does',
+    outcomesLabel: 'What you get',
+    stackLabel: 'Built with',
     cta: {
-      title: 'Which of these is closest to your problem?',
-      body: 'Most engagements begin as a version of one of the above and end somewhere more specific. Tell us the shape of yours.',
+      title: 'Which one is closest to your problem?',
+      body: 'Most projects start as one of these and then get shaped to fit exactly what you need. Tell us about yours.',
       action: 'Start a conversation',
     },
   },
@@ -270,47 +270,47 @@ export const en = {
   services: {
     hero: {
       eyebrow: 'Services',
-      title: 'How we engage.',
-      lead: 'Four ways of working together, from a two-week assessment to owning a platform end to end. Every one staffed by senior engineers.',
+      title: 'How we work with you.',
+      lead: 'Four ways to work together, from a short two-week review to building and running a full system for you. Every one led by senior engineers.',
     },
     includesLabel: 'What it includes',
-    deliverableLabel: 'What you receive',
-    timelineLabel: 'Typical duration',
+    deliverableLabel: 'What you get',
+    timelineLabel: 'Typical time',
     process: {
-      eyebrow: 'Process',
-      title: 'How an engagement actually runs.',
-      lead: 'Deliberately unglamorous. It is the reason our systems survive their first year.',
+      eyebrow: 'Our process',
+      title: 'How a project actually runs.',
+      lead: 'Simple and steady. This is why our systems are still working a year later.',
       steps: {
         one: {
           index: '01',
           title: 'Understand',
-          body: 'We map the current process, talk to the people inside it, and establish the baseline metric. Nothing is designed until the problem is measured.',
+          body: 'We learn how the work is done today, talk to the people who do it, and measure the starting point. We do not design anything until we understand the problem.',
         },
         two: {
           index: '02',
-          title: 'Specify',
-          body: 'A written technical specification: architecture, data boundaries, success criteria, failure modes and the explicit list of what we are not building.',
+          title: 'Plan',
+          body: 'We write a clear plan: how it will work, where your data goes, what success looks like, what could go wrong, and what we are not building.',
         },
         three: {
           index: '03',
-          title: 'Engineer',
-          body: 'Short iterations against the specification, with working software in your hands early. Documentation is written as we go, not retrofitted.',
+          title: 'Build',
+          body: 'We build in short steps and put working software in your hands early. We write the documentation as we go, not at the end.',
         },
         four: {
           index: '04',
-          title: 'Deploy',
-          body: 'Into your infrastructure, with monitoring, runbooks and rollback paths in place before traffic arrives.',
+          title: 'Launch',
+          body: 'We set it up on your systems, with monitoring and a safe way to roll back, all in place before real users arrive.',
         },
         five: {
           index: '05',
-          title: 'Sustain',
-          body: 'We measure against the baseline, tune what drifts, and hand over a system your team can genuinely own.',
+          title: 'Support',
+          body: 'We check the results against the starting point, fix what drifts, and hand over a system your team can truly own.',
         },
       },
     },
     cta: {
       title: 'Not sure which one you need?',
-      body: 'Describe the problem and we will tell you which engagement fits — or that you do not need us yet.',
+      body: 'Tell us the problem and we will tell you which option fits — or if you do not need us yet.',
       action: 'Talk to an engineer',
     },
   },
@@ -321,27 +321,27 @@ export const en = {
   portfolio: {
     hero: {
       eyebrow: 'Portfolio',
-      title: 'Work, and what it changed.',
-      lead: 'Selected engagements with the outcomes our clients actually measured. Where a client is under confidentiality, the sector is named and the organisation is not.',
+      title: 'Our work, and what it changed.',
+      lead: 'Selected projects with the results our clients actually measured. When a client asks us to stay private, we name the industry but not the company.',
     },
     filterAll: 'All work',
-    filterLabel: 'Filter by discipline',
+    filterLabel: 'Filter by type',
     resultsLabel: 'Results',
-    challengeLabel: 'The challenge',
-    approachLabel: 'Our approach',
-    outcomeLabel: 'The outcome',
-    stackLabel: 'Engineered with',
-    sectorLabel: 'Sector',
+    challengeLabel: 'The problem',
+    approachLabel: 'What we did',
+    outcomeLabel: 'The result',
+    stackLabel: 'Built with',
+    sectorLabel: 'Industry',
     yearLabel: 'Year',
     durationLabel: 'Duration',
     beforeLabel: 'Before',
     afterLabel: 'After',
-    confidential: 'Client under NDA',
+    confidential: 'Client kept private',
     empty: 'No work matches this filter yet.',
-    nextCase: 'Next case study',
+    nextCase: 'Next project',
     cta: {
-      title: 'Your system could be the next one here.',
-      body: 'Tell us what you are trying to change and what success would look like in numbers.',
+      title: 'Your project could be the next one here.',
+      body: 'Tell us what you want to change and what success would look like in numbers.',
       action: 'Start a conversation',
     },
   },
@@ -352,21 +352,21 @@ export const en = {
   about: {
     hero: {
       eyebrow: 'About',
-      title: 'An engineering company, first.',
-      lead: 'Elite Algos Labs LTD builds artificial intelligence systems for organisations that need them to work — not to impress. We are engineers, and we are accountable for what we ship.',
+      title: 'A software and AI company you can rely on.',
+      lead: 'Elite Algos Labs LTD builds AI and software for organisations that need it to work — not just to look good. We are engineers, and we stand behind what we deliver.',
     },
     story: {
       eyebrow: 'Who we are',
-      title: 'Founded on a specific frustration.',
+      title: 'We started with one simple frustration.',
       body1:
-        'The gap between what artificial intelligence can do in a demonstration and what it reliably does inside an organisation is enormous — and almost entirely an engineering problem. Data boundaries, failure handling, observability, human review, cost control, drift, and the unglamorous work of making a system somebody else can maintain.',
+        'AI often looks amazing in a demo, but then struggles to work reliably inside a real business. Fixing that is an engineering job: keeping data safe, handling errors, letting people check the results, controlling costs, and building something your team can actually maintain.',
       body2:
-        'Elite Algos Labs was formed to do that work properly. We build a small number of systems for a small number of organisations, and we build them to be depended upon. We are incorporated in Rwanda and we work with clients globally.',
+        'We started Elite Algos Labs to do that work properly. We take on a small number of clients and build systems they can depend on. We are registered in Rwanda and we work with clients around the world.',
     },
     principles: {
-      eyebrow: 'Standards',
+      eyebrow: 'Our standards',
       title: 'What we hold ourselves to.',
-      lead: 'These are not aspirations. They are the criteria we review our own work against.',
+      lead: 'These are not slogans. They are the standards we check our own work against.',
     },
     numbers: {
       eyebrow: 'At a glance',
@@ -383,12 +383,12 @@ export const en = {
     },
     team: {
       eyebrow: 'Team',
-      title: 'The people accountable for the work.',
-      lead: 'Small by design. Every engagement is staffed by people whose names you will know.',
+      title: 'The people behind the work.',
+      lead: 'Small on purpose. On every project you work with people whose names you will know.',
     },
     cta: {
       title: 'Work with us.',
-      body: 'We take on a limited number of engagements at a time. If what you are building matters, tell us about it.',
+      body: 'We take on only a few projects at a time. If what you are building matters, tell us about it.',
       action: 'Start a conversation',
     },
   },
@@ -400,34 +400,34 @@ export const en = {
     hero: {
       eyebrow: 'Contact',
       title: 'Talk to an engineer.',
-      lead: 'Not a form that routes to a sales queue. Tell us the problem and someone who could actually build the solution will reply.',
+      lead: 'This is not a form that lands in a sales queue. Tell us the problem and someone who could actually build the solution will reply.',
     },
     channels: {
-      title: 'Direct channels',
+      title: 'Email us directly',
       business: {
         label: 'New projects',
-        description: 'Scoping, proposals and technical discussion.',
+        description: 'Quotes, proposals and questions about your project.',
       },
       general: {
         label: 'General enquiries',
-        description: 'Everything else — partnerships, press, procurement.',
+        description: 'Everything else — partnerships, press and suppliers.',
       },
       founder: {
         label: "Founder's office",
-        description: 'Strategic, confidential or executive matters.',
+        description: 'Private or executive matters.',
       },
     },
     response: {
       title: 'What happens next',
       steps: {
-        one: 'We read every message ourselves — no auto-triage.',
-        two: 'You receive a reply within two business days, from a person.',
-        three: 'If there is a fit, we schedule a technical conversation. If there is not, we say so and point you somewhere better.',
+        one: 'We read every message ourselves. Nothing is sorted by a robot.',
+        two: 'A real person replies within two working days.',
+        three: 'If we are a good fit, we set up a call. If we are not, we tell you and point you somewhere better.',
       },
     },
     form: {
       title: 'Send us a message',
-      lead: 'The more specific you are, the more useful our reply will be.',
+      lead: 'The more detail you give us, the more useful our reply will be.',
       name: 'Full name',
       namePlaceholder: 'Ada Lovelace',
       email: 'Work email',
@@ -438,15 +438,15 @@ export const en = {
       topic: 'What is this about?',
       topicOptions: {
         project: 'A new project',
-        consulting: 'AI consulting or assessment',
+        consulting: 'AI advice or a review',
         partnership: 'Partnership',
         careers: 'Careers',
         other: 'Something else',
       },
-      budget: 'Indicative budget',
+      budget: 'Rough budget',
       budgetOptional: 'optional',
       budgetOptions: {
-        undecided: 'Not yet determined',
+        undecided: 'Not sure yet',
         under25: 'Under $25,000',
         from25: '$25,000 – $100,000',
         from100: '$100,000 – $500,000',
@@ -454,18 +454,18 @@ export const en = {
       },
       message: 'Your message',
       messagePlaceholder:
-        'What are you trying to achieve, what does it look like today, and what would success look like in numbers?',
+        'What do you want to achieve? How is it done today, and what would success look like in numbers?',
       consent:
-        'I agree that Elite Algos Labs may store this message in order to respond to my enquiry.',
+        'I agree that Elite Algos Labs may keep this message in order to reply to me.',
       submit: 'Send message',
       submitting: 'Sending…',
       successTitle: 'Message received.',
       successBody:
-        'Thank you — we have your message and will reply within two business days.',
+        'Thank you — we have your message and will reply within two working days.',
       successAgain: 'Send another message',
       errorTitle: 'That did not send.',
       errorBody:
-        'Something failed on our side. Please try again, or email us directly at hello@elitealgoslabs.com.',
+        'Something went wrong on our side. Please try again, or email us directly at hello@elitealgoslabs.com.',
     },
   },
 
@@ -475,37 +475,37 @@ export const en = {
   careers: {
     hero: {
       eyebrow: 'Careers',
-      title: 'We are assembling the team.',
-      lead: 'Elite Algos Labs is building a small group of exceptional engineers, designers and researchers. Formal openings are being defined now.',
+      title: 'We are building the team.',
+      lead: 'Elite Algos Labs is putting together a small group of talented engineers, designers and researchers. We are defining the first roles now.',
       badge: 'Opening soon',
     },
     what: {
-      eyebrow: 'What we will be looking for',
-      title: 'A specific kind of engineer.',
-      lead: 'Roles will be posted here first. In the meantime, this is the standard we hire to.',
+      eyebrow: 'What we look for',
+      title: 'A certain kind of engineer.',
+      lead: 'Jobs will be posted here first. Until then, this is the bar we hire to.',
       traits: {
         depth: {
-          title: 'Depth over breadth',
-          body: 'People who have gone genuinely deep on something and can explain why the hard parts were hard.',
+          title: 'Real depth',
+          body: 'People who have gone deep on something and can explain why the hard parts were hard.',
         },
         ownership: {
-          title: 'Ownership instinct',
-          body: 'Engineers who treat the production incident, the missing test and the confusing docs as theirs to fix.',
+          title: 'Takes ownership',
+          body: 'Engineers who see a problem — a broken feature, a missing test, unclear docs — and fix it without being asked.',
         },
         clarity: {
-          title: 'Written clarity',
-          body: 'We work across time zones and document everything. Clear writing is a core engineering skill here, not a bonus.',
+          title: 'Writes clearly',
+          body: 'We work across time zones and write things down. Clear writing matters here as much as clean code.',
         },
         judgement: {
-          title: 'Judgement about scope',
-          body: 'Knowing what not to build is worth more than the ability to build anything.',
+          title: 'Good judgement',
+          body: 'Knowing what not to build is worth more than being able to build anything.',
         },
       },
     },
     register: {
       eyebrow: 'Register interest',
-      title: 'Get told first.',
-      body: 'Send us what you have built and we will contact you when a role matches. Include something you are proud of — code, a paper, a system, a product.',
+      title: 'Hear about roles first.',
+      body: 'Send us something you have built and we will reach out when a role fits. Share something you are proud of — code, a paper, a system or a product.',
       action: 'Email the founder',
       note: 'Write to founder@elitealgoslabs.com with the subject "Careers".',
     },
@@ -518,7 +518,7 @@ export const en = {
     hero: {
       eyebrow: 'Insights',
       title: 'Notes from the work.',
-      lead: 'Architecture decisions, engineering trade-offs and field observations — written by the people doing the building, for people who will have to make the same calls.',
+      lead: 'Practical lessons and honest trade-offs from our projects — written by the people doing the building, for people facing the same choices.',
     },
     featured: 'Featured',
     allArticles: 'All articles',
@@ -530,7 +530,7 @@ export const en = {
     shareLabel: 'Share this article',
     relatedTitle: 'Related reading',
     backToInsights: 'All insights',
-    empty: 'No articles published yet. The first ones are being written.',
+    empty: 'No articles yet. The first ones are being written.',
     tocTitle: 'On this page',
   },
 
@@ -539,7 +539,7 @@ export const en = {
   // ==========================================================================
   footer: {
     blurb:
-      'Elite Algos Labs LTD engineers artificial intelligence systems for organisations that depend on them. Precision, trust and longevity — by design.',
+      'Elite Algos Labs LTD builds AI and software for organisations that rely on it. Clear, reliable and built to last.',
     navTitle: 'Navigate',
     contactTitle: 'Contact',
     companyTitle: 'Company',
@@ -556,14 +556,14 @@ export const en = {
   // FORM VALIDATION
   // ==========================================================================
   validation: {
-    required: 'This field is required.',
+    required: 'Please fill in this field.',
     nameTooShort: 'Please enter your full name.',
     emailInvalid: 'Please enter a valid email address.',
-    messageTooShort: 'Please give us a little more detail — at least 20 characters.',
-    messageTooLong: 'That is longer than our form accepts. Please email us directly.',
-    consentRequired: 'We need your agreement in order to store and reply to your message.',
-    rateLimited: 'Too many messages from this address. Please try again shortly.',
-    serverError: 'We could not process that. Please try again.',
+    messageTooShort: 'Please tell us a bit more — at least 20 characters.',
+    messageTooLong: 'That is longer than the form allows. Please email us directly.',
+    consentRequired: 'We need your agreement so we can keep and reply to your message.',
+    rateLimited: 'Too many messages from this address. Please try again soon.',
+    serverError: 'We could not send that. Please try again.',
   },
 
   // ==========================================================================
@@ -572,21 +572,21 @@ export const en = {
   notFound: {
     code: '404',
     title: 'This page does not exist.',
-    body: 'The address may be mistyped, or the page may have moved. Everything else is still where you left it.',
+    body: 'The address may be misspelt, or the page may have moved. Everything else is still where you left it.',
     action: 'Return home',
     secondary: 'Contact us',
   },
   error: {
     code: 'Error',
     title: 'Something went wrong.',
-    body: 'An unexpected error interrupted this page. The issue has been logged. You can try again, or head back home.',
+    body: 'An unexpected error stopped this page from loading. We have logged it. You can try again, or go back home.',
     retry: 'Try again',
     action: 'Return home',
   },
 
   errorPage: {
-    title: 'Something broke on our side.',
-    body: 'An unexpected error occurred. It has been logged and we are looking at it.',
+    title: 'Something went wrong on our side.',
+    body: 'An unexpected error happened. We have logged it and we are looking into it.',
     action: 'Try again',
     secondary: 'Return home',
   },

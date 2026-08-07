@@ -18,8 +18,8 @@ export const fr: Dictionary = {
   common: {
     company: 'Elite Algos Labs',
     companyLegal: 'Elite Algos Labs LTD',
-    tagline: "Bâtir les fondations de l'intelligence mondiale.",
-    taglineShort: 'Précision. Confiance. Innovation.',
+    tagline: 'Nous créons des logiciels et de l’IA qui aident votre entreprise à mieux fonctionner.',
+    taglineShort: 'Clair. Fiable. Durable.',
     sealMotto: 'Précision · Intelligence d’entreprise',
     sealSub: 'Ingénierie d’algorithmes intelligents',
 
@@ -76,44 +76,44 @@ export const fr: Dictionary = {
   // ==========================================================================
   meta: {
     home: {
-      title: 'Elite Algos Labs — L’ingénierie des logiciels intelligents',
+      title: 'Elite Algos Labs — L’IA et les logiciels pour votre entreprise',
       description:
-        'Nous concevons et développons des systèmes d’intelligence artificielle, des agents autonomes et des automatisations d’entreprise que les organisations exploitent en production. Une ingénierie de précision pour un marché mondial.',
+        'Nous créons des logiciels et de l’IA que les entreprises, gouvernements et institutions utilisent chaque jour. De l’automatisation intelligente aux logiciels sur mesure, nous vous aidons à gagner du temps, à réduire le travail manuel et à mieux décider.',
     },
     solutions: {
       title: 'Solutions',
       description:
-        'Plateformes d’IA prêtes pour la production : agents intelligents, compréhension documentaire, automatisation d’entreprise, déploiements privés et intelligence des données — conçus pour l’échelle et l’auditabilité.',
+        'Des outils d’IA qui résolvent de vrais problèmes : assistants IA, traitement de documents, automatisation des tâches, IA privée sous votre contrôle et réponses claires à partir de vos propres données.',
     },
     services: {
       title: 'Services',
       description:
-        'Conseil en IA, ingénierie de plateformes sur mesure, intégration de systèmes et infrastructure cloud. Des ingénieurs seniors, des résultats mesurables, aucune sous-traitance à des équipes juniors.',
+        'Conseil en IA, logiciels sur mesure, ajout d’IA aux systèmes que vous utilisez déjà, et mise en place cloud. Vous travaillez directement avec des ingénieurs seniors — sans sous-traitance à des juniors.',
     },
     portfolio: {
       title: 'Réalisations',
       description:
-        'Une sélection de projets d’Elite Algos Labs — des études de cas aux résultats réellement mesurés, en intelligence documentaire, agents autonomes et automatisation d’entreprise.',
+        'Une sélection de projets d’Elite Algos Labs, avec les vrais résultats mesurés par nos clients : traitement de documents, assistants IA et automatisation.',
     },
     about: {
       title: 'À propos',
       description:
-        'Elite Algos Labs est une société d’ingénierie en IA qui construit les systèmes dont dépendent entreprises, gouvernements et institutions. Nos principes, nos exigences et notre méthode.',
+        'Elite Algos Labs est une société de logiciels et d’IA sur laquelle entreprises, gouvernements et institutions comptent. Voici ce en quoi nous croyons et comment nous travaillons.',
     },
     contact: {
       title: 'Contact',
       description:
-        'Échangez avec les ingénieurs qui construiront votre système. Décrivez votre objectif et nous vous dirons honnêtement si nous sommes les bons interlocuteurs.',
+        'Échangez avec les ingénieurs qui construiront votre système. Dites-nous ce que vous voulez accomplir et nous vous dirons honnêtement si nous pouvons vous aider.',
     },
     careers: {
       title: 'Carrières',
       description:
-        'Nous constituons une équipe restreinte d’ingénieurs, de designers et de chercheurs d’exception. Postes ouverts prochainement — manifestez votre intérêt.',
+        'Nous constituons une petite équipe d’ingénieurs, de designers et de chercheurs talentueux. Postes ouverts prochainement — dites-nous que vous êtes intéressé.',
     },
     insights: {
       title: 'Analyses',
       description:
-        'Notes d’ingénierie, décisions d’architecture et retours de terrain de l’équipe Elite Algos Labs. Écrits par celles et ceux qui font le travail.',
+        'Des notes pratiques et des enseignements de l’équipe Elite Algos Labs, écrits par celles et ceux qui font le travail.',
     },
     notFound: {
       title: 'Page introuvable',
@@ -126,117 +126,117 @@ export const fr: Dictionary = {
   // ==========================================================================
   home: {
     hero: {
-      eyebrow: 'Ingénierie en intelligence artificielle',
-      titleLine1: 'L’intelligence,',
-      titleLine2: 'par l’ingénierie.',
-      lead: 'Elite Algos Labs conçoit des systèmes d’intelligence artificielle que les organisations exploitent en production — agents autonomes, compréhension documentaire et automatisation d’entreprise, pensés pour être fiables, auditables et dignes de confiance.',
+      eyebrow: 'Ingénierie logicielle et IA',
+      titleLine1: 'L’IA et les logiciels',
+      titleLine2: 'pour votre entreprise.',
+      lead: 'Elite Algos Labs crée des logiciels et de l’IA que les entreprises utilisent chaque jour — assistants IA, traitement de documents et automatisation qui font gagner du temps, réduisent le travail manuel et aident vos équipes à avancer plus vite.',
       primaryCta: 'Entamer la conversation',
-      secondaryCta: 'Découvrir nos réalisations',
+      secondaryCta: 'Voir nos réalisations',
       scrollHint: 'Défiler',
     },
 
     mission: {
-      eyebrow: 'Mission',
-      title: 'Nous bâtissons les systèmes sur lesquels l’intelligence repose.',
-      body: 'La plupart des systèmes d’intelligence artificielle ne survivent pas au contact de la production. Ils impressionnent en démonstration puis échouent en silence — sans supervision, sans responsable, incapables de s’expliquer. Nous existons pour combler cet écart. Chaque système que nous livrons est conçu pour le jour où l’on comptera sur lui : observable, réversible et responsable devant celles et ceux dont le travail en dépend.',
+      eyebrow: 'Ce en quoi nous croyons',
+      title: 'Nous créons une IA qui fonctionne vraiment dans le monde réel.',
+      body: 'Beaucoup d’IA fait forte impression en démonstration, puis échoue une fois confrontée au travail réel. Nous créons celle qui dure. Chaque système que nous livrons est conçu pour être fiable dès le premier jour : vous voyez ce qu’il fait, vous pouvez l’annuler si besoin, et vous pouvez compter dessus pour de vrai.',
       pillars: {
         precision: {
           title: 'Précision',
-          body: 'Les systèmes sont spécifiés avant d’être construits et mesurés après leur mise en service. Nous rapportons ce que les chiffres disent réellement.',
+          body: 'Nous définissons ce qu’est le succès avant de construire, puis nous le mesurons après. Nous vous disons ce que les chiffres montrent vraiment.',
         },
         trust: {
           title: 'Confiance',
-          body: 'Des décisions auditables, des frontières de données explicites et des déploiements que vous maîtrisez entièrement — y compris au sein de votre propre infrastructure.',
+          body: 'Vous voyez comment chaque décision a été prise, vous contrôlez où vont vos données, et vous pouvez tout faire tourner sur vos propres systèmes si vous le souhaitez.',
         },
         longevity: {
-          title: 'Longévité',
-          body: 'Nous écrivons des logiciels destinés à être maintenus par des personnes qui n’étaient pas dans la pièce. Documentés, typés et volontairement sans surprise.',
+          title: 'Conçu pour durer',
+          body: 'Nous écrivons des logiciels que votre propre équipe peut continuer à faire tourner longtemps après notre départ. Clairs, bien documentés et faciles à maintenir.',
         },
       },
     },
 
     services: {
       eyebrow: 'Notre métier',
-      title: 'Une ingénierie sur toute la chaîne de l’intelligence.',
-      lead: 'De la couche modèle jusqu’à l’interface que vos équipes utilisent chaque matin.',
+      title: 'Tout ce qu’il vous faut, de l’idée au système fonctionnel.',
+      lead: 'De l’IA en coulisses jusqu’aux écrans que vos équipes utilisent chaque matin.',
       cta: 'Tous nos services',
     },
 
     why: {
       eyebrow: 'Pourquoi Elite Algos Labs',
-      title: 'Des ingénieurs seniors. Des résultats mesurés. Aucune sous-traitance.',
-      lead: 'Ce qui change lorsque les personnes qui cadrent votre système sont celles qui le construisent.',
+      title: 'Des ingénieurs seniors. De vrais résultats. Aucune sous-traitance.',
+      lead: 'Les personnes qui planifient votre projet sont celles qui le construisent.',
       points: {
         seniority: {
-          title: 'Ceux qui cadrent sont ceux qui construisent',
-          body: 'Pas de pyramide de sous-traitance. Les ingénieurs de votre premier échange sont ceux qui écrivent le code — et ceux que vous appellerez dans dix-huit mois.',
+          title: 'Ceux qui planifient sont ceux qui construisent',
+          body: 'Les ingénieurs que vous rencontrez au premier échange sont ceux qui écrivent le code — et ceux que vous pourrez encore appeler un an plus tard.',
         },
         ownership: {
           title: 'Vous êtes propriétaire de tout',
-          body: 'Code source, poids de modèles le cas échéant, définitions d’infrastructure et documentation. Aucune dépendance forcée, aucune boîte noire, aucune donnée retenue en otage.',
+          body: 'Le code, la mise en place et la documentation sont à vous. Aucune dépendance forcée, aucune partie cachée, aucune donnée retenue en otage.',
         },
         measurement: {
-          title: 'Des résultats, pas de l’activité',
-          body: 'Nous définissons ensemble la métrique du succès avant de commencer, nous l’instrumentons et nous la rapportons honnêtement — y compris lorsqu’elle déçoit.',
+          title: 'Des résultats, pas de l’agitation',
+          body: 'Nous convenons de la façon de mesurer le succès avant de commencer, nous la suivons et nous la rapportons honnêtement — même quand la nouvelle n’est pas bonne.',
         },
         sovereignty: {
           title: 'Vos données restent les vôtres',
-          body: 'Les déploiements privés et sur site sont une option de premier plan, pas une réflexion après coup. Certaines charges de travail ne doivent jamais quitter vos murs.',
+          body: 'Nous pouvons tout faire tourner sur vos propres serveurs quand vous en avez besoin. Certaines données ne doivent jamais quitter vos murs, et c’est très bien ainsi.',
         },
       },
     },
 
     philosophy: {
-      eyebrow: 'Philosophie d’ingénierie',
-      title: 'Construire pour des décennies, pas pour des trimestres.',
-      lead: 'Cinq engagements qui orientent chacune de nos décisions techniques.',
+      eyebrow: 'Notre façon de travailler',
+      title: 'Nous construisons pour des années, pas pour des trimestres.',
+      lead: 'Cinq règles derrière chacune de nos décisions.',
       principles: {
         one: {
           index: '01',
-          title: 'La justesse avant l’ingéniosité',
-          body: 'Un système simple et correct vaut mieux qu’un système brillant et fragile. Nous optimisons pour l’ingénieur qui en héritera dans trois ans.',
+          title: 'Bien faire avant de faire malin',
+          body: 'Simple et correct vaut mieux que malin et fragile. Nous construisons pour que la personne suivante puisse comprendre et maintenir le système des années plus tard.',
         },
         two: {
           index: '02',
-          title: 'Un système doit pouvoir s’expliquer',
-          body: 'Chaque décision automatisée doit être traçable jusqu’à ses données d’entrée. Si nous ne pouvons pas expliquer un résultat, nous ne le mettons pas en production dans un processus critique.',
+          title: 'Le système doit s’expliquer lui-même',
+          body: 'Vous devez toujours pouvoir voir pourquoi le système a pris une décision. Si nous ne pouvons pas expliquer un résultat, nous ne le plaçons pas dans un travail important.',
         },
         three: {
           index: '03',
-          title: 'Concevoir pour la panne',
-          body: 'Les modèles dérivent, les API disparaissent, les réseaux se coupent. Nous concevons délibérément le mode dégradé plutôt que de le découvrir en production.',
+          title: 'Prévoir les imprévus',
+          body: 'Les outils tombent en panne, les connexions se coupent, les données changent. Nous prévoyons le mauvais jour exprès, pour qu’il ne vous surprenne pas plus tard.',
         },
         four: {
           index: '04',
-          title: 'La documentation fait partie de la livraison',
-          body: 'Décisions d’architecture, arbitrages et alternatives écartées sont consignés au fil du travail. La mémoire institutionnelle est une infrastructure.',
+          title: 'La documentation fait partie du travail',
+          body: 'Nous notons comment les choses fonctionnent et pourquoi nous avons fait chaque choix, au fil de l’eau. Ce savoir vous reste.',
         },
         five: {
           index: '05',
-          title: 'Mériter le droit d’automatiser',
-          body: 'Nous mesurons le processus manuel avant de le remplacer. Automatiser sans référence de départ, c’est deviner en costume.',
+          title: 'Mesurer avant d’automatiser',
+          body: 'Nous mesurons comment le travail manuel est fait aujourd’hui avant de le remplacer. Automatiser sans mesurer d’abord, c’est deviner.',
         },
       },
     },
 
     solutions: {
-      eyebrow: 'Solutions phares',
-      title: 'Des plateformes, pas des prototypes.',
-      lead: 'Des systèmes que nous avons conçus et que nous pouvons déployer pour votre organisation.',
+      eyebrow: 'Ce que nous pouvons construire',
+      title: 'De vrais systèmes, pas juste des démonstrations.',
+      lead: 'Des solutions que nous avons déjà construites et que nous pouvons mettre en place pour votre organisation.',
       cta: 'Toutes nos solutions',
     },
 
     portfolio: {
-      eyebrow: 'Sélection de projets',
-      title: 'Des résultats mesurés.',
+      eyebrow: 'Nos réalisations',
+      title: 'De vrais résultats.',
       lead: 'Un aperçu de ce que nous avons livré, avec les chiffres qui comptaient pour le client.',
       cta: 'Voir les réalisations',
     },
 
     cta: {
       eyebrow: 'Commencer ici',
-      title: 'Dites-nous ce que vous cherchez à accomplir.',
-      body: 'Pas un appel commercial. Un échange technique avec les ingénieurs qui construiraient votre système — et une réponse honnête sur notre capacité à vous aider.',
+      title: 'Dites-nous ce que vous voulez accomplir.',
+      body: 'Ce n’est pas un appel commercial. C’est un échange direct avec les ingénieurs qui construiraient votre système — et une réponse honnête sur le fait que nous soyons ou non la bonne équipe.',
       primary: 'Entamer la conversation',
       secondary: 'hello@elitealgoslabs.com',
     },
@@ -248,15 +248,15 @@ export const fr: Dictionary = {
   solutions: {
     hero: {
       eyebrow: 'Solutions',
-      title: 'Des systèmes conçus pour la production.',
-      lead: 'Chacune de ces solutions est une plateforme que nous avons conçue, développée et exploitée. Ce sont des points de départ que nous façonnons selon vos exigences, non des licences vendues sur étagère.',
+      title: 'Ce que nous pouvons construire pour vous.',
+      lead: 'Chacune de ces solutions est quelque chose que nous avons déjà construit et fait tourner. Ce sont des points de départ que nous adaptons à vos besoins — pas des produits tout faits vendus sur étagère.',
     },
-    capabilitiesLabel: 'Capacités',
-    outcomesLabel: 'Résultats habituels',
-    stackLabel: 'Pile technique représentative',
+    capabilitiesLabel: 'Ce que ça fait',
+    outcomesLabel: 'Ce que vous obtenez',
+    stackLabel: 'Construit avec',
     cta: {
-      title: 'Laquelle se rapproche le plus de votre problème ?',
-      body: 'La plupart de nos missions commencent comme une variante de ce qui précède et aboutissent à quelque chose de plus spécifique. Décrivez-nous la vôtre.',
+      title: 'Laquelle se rapproche le plus de votre problème ?',
+      body: 'La plupart des projets commencent par l’une de ces solutions, puis sont adaptés pour coller exactement à vos besoins. Parlez-nous du vôtre.',
       action: 'Entamer la conversation',
     },
   },
@@ -267,47 +267,47 @@ export const fr: Dictionary = {
   services: {
     hero: {
       eyebrow: 'Services',
-      title: 'Nos modes de collaboration.',
-      lead: 'Quatre façons de travailler ensemble, d’un audit de deux semaines à la prise en charge complète d’une plateforme. Chacune assurée par des ingénieurs seniors.',
+      title: 'Comment nous travaillons avec vous.',
+      lead: 'Quatre façons de travailler ensemble, d’une courte revue de deux semaines à la construction et à l’exploitation d’un système complet pour vous. Chacune menée par des ingénieurs seniors.',
     },
     includesLabel: 'Ce que cela comprend',
-    deliverableLabel: 'Ce que vous recevez',
+    deliverableLabel: 'Ce que vous obtenez',
     timelineLabel: 'Durée habituelle',
     process: {
-      eyebrow: 'Méthode',
-      title: 'Comment se déroule réellement une mission.',
-      lead: 'Volontairement peu spectaculaire. C’est la raison pour laquelle nos systèmes passent leur première année.',
+      eyebrow: 'Notre méthode',
+      title: 'Comment se déroule vraiment un projet.',
+      lead: 'Simple et régulière. C’est pour ça que nos systèmes fonctionnent encore un an plus tard.',
       steps: {
         one: {
           index: '01',
           title: 'Comprendre',
-          body: 'Nous cartographions le processus actuel, échangeons avec celles et ceux qui le vivent, et établissons la métrique de référence. Rien n’est conçu tant que le problème n’est pas mesuré.',
+          body: 'Nous apprenons comment le travail est fait aujourd’hui, parlons avec les personnes qui le font, et mesurons le point de départ. Nous ne concevons rien tant que nous n’avons pas compris le problème.',
         },
         two: {
           index: '02',
-          title: 'Spécifier',
-          body: 'Une spécification technique écrite : architecture, frontières de données, critères de succès, modes de défaillance et la liste explicite de ce que nous ne construirons pas.',
+          title: 'Planifier',
+          body: 'Nous rédigeons un plan clair : comment ça va fonctionner, où vont vos données, à quoi ressemble le succès, ce qui pourrait mal tourner, et ce que nous ne construisons pas.',
         },
         three: {
           index: '03',
-          title: 'Concevoir',
-          body: 'Des itérations courtes conformes à la spécification, avec un logiciel fonctionnel entre vos mains rapidement. La documentation s’écrit en même temps, jamais après coup.',
+          title: 'Construire',
+          body: 'Nous construisons par petites étapes et mettons un logiciel fonctionnel entre vos mains rapidement. Nous écrivons la documentation au fil de l’eau, pas à la fin.',
         },
         four: {
           index: '04',
-          title: 'Déployer',
-          body: 'Dans votre infrastructure, avec supervision, procédures d’exploitation et chemins de retour arrière en place avant l’arrivée du trafic.',
+          title: 'Lancer',
+          body: 'Nous l’installons sur vos systèmes, avec la supervision et un moyen sûr de revenir en arrière, tout en place avant l’arrivée des vrais utilisateurs.',
         },
         five: {
           index: '05',
-          title: 'Pérenniser',
-          body: 'Nous mesurons par rapport à la référence, corrigeons les dérives et transmettons un système que vos équipes peuvent réellement s’approprier.',
+          title: 'Accompagner',
+          body: 'Nous comparons les résultats au point de départ, corrigeons ce qui dérive, et transmettons un système que votre équipe peut vraiment s’approprier.',
         },
       },
     },
     cta: {
-      title: 'Vous hésitez sur la formule adaptée ?',
-      body: 'Décrivez le problème et nous vous dirons quelle mission convient — ou que vous n’avez pas encore besoin de nous.',
+      title: 'Vous ne savez pas laquelle vous convient ?',
+      body: 'Dites-nous le problème et nous vous dirons quelle option convient — ou si vous n’avez pas encore besoin de nous.',
       action: 'Parler à un ingénieur',
     },
   },
@@ -318,27 +318,27 @@ export const fr: Dictionary = {
   portfolio: {
     hero: {
       eyebrow: 'Réalisations',
-      title: 'Nos projets, et ce qu’ils ont changé.',
-      lead: 'Une sélection de missions avec les résultats effectivement mesurés par nos clients. Lorsqu’un client est soumis à une clause de confidentialité, nous nommons le secteur, jamais l’organisation.',
+      title: 'Nos réalisations, et ce qu’elles ont changé.',
+      lead: 'Une sélection de projets avec les résultats réellement mesurés par nos clients. Lorsqu’un client nous demande de rester discrets, nous nommons le secteur mais pas l’entreprise.',
     },
     filterAll: 'Tous les projets',
-    filterLabel: 'Filtrer par discipline',
+    filterLabel: 'Filtrer par type',
     resultsLabel: 'Résultats',
-    challengeLabel: 'Le défi',
-    approachLabel: 'Notre approche',
+    challengeLabel: 'Le problème',
+    approachLabel: 'Ce que nous avons fait',
     outcomeLabel: 'Le résultat',
-    stackLabel: 'Conçu avec',
+    stackLabel: 'Construit avec',
     sectorLabel: 'Secteur',
     yearLabel: 'Année',
     durationLabel: 'Durée',
     beforeLabel: 'Avant',
     afterLabel: 'Après',
-    confidential: 'Client sous accord de confidentialité',
+    confidential: 'Client gardé confidentiel',
     empty: 'Aucun projet ne correspond encore à ce filtre.',
-    nextCase: 'Étude de cas suivante',
+    nextCase: 'Projet suivant',
     cta: {
-      title: 'Votre système pourrait être le prochain ici.',
-      body: 'Dites-nous ce que vous cherchez à transformer et à quoi ressemblerait le succès en chiffres.',
+      title: 'Votre projet pourrait être le prochain ici.',
+      body: 'Dites-nous ce que vous voulez changer et à quoi ressemblerait le succès en chiffres.',
       action: 'Entamer la conversation',
     },
   },
@@ -349,21 +349,21 @@ export const fr: Dictionary = {
   about: {
     hero: {
       eyebrow: 'À propos',
-      title: 'Avant tout, une société d’ingénierie.',
-      lead: 'Elite Algos Labs LTD conçoit des systèmes d’intelligence artificielle pour des organisations qui ont besoin qu’ils fonctionnent — pas qu’ils impressionnent. Nous sommes des ingénieurs, et nous répondons de ce que nous livrons.',
+      title: 'Une société de logiciels et d’IA sur laquelle compter.',
+      lead: 'Elite Algos Labs LTD crée des logiciels et de l’IA pour des organisations qui ont besoin que ça fonctionne — pas seulement que ça fasse bonne impression. Nous sommes des ingénieurs, et nous assumons ce que nous livrons.',
     },
     story: {
       eyebrow: 'Qui nous sommes',
-      title: 'Née d’une frustration précise.',
+      title: 'Nous sommes partis d’une frustration simple.',
       body1:
-        'L’écart entre ce que l’intelligence artificielle sait faire en démonstration et ce qu’elle accomplit réellement au sein d’une organisation est immense — et il relève presque entièrement de l’ingénierie. Frontières de données, gestion des défaillances, observabilité, revue humaine, maîtrise des coûts, dérive des modèles, et le travail ingrat consistant à rendre un système maintenable par quelqu’un d’autre.',
+        'L’IA fait souvent forte impression en démonstration, puis peine à fonctionner de manière fiable dans une vraie entreprise. Corriger cela est un travail d’ingénierie : garder les données en sécurité, gérer les erreurs, permettre aux gens de vérifier les résultats, maîtriser les coûts, et construire quelque chose que votre équipe peut réellement maintenir.',
       body2:
-        'Elite Algos Labs a été fondée pour faire ce travail correctement. Nous construisons un petit nombre de systèmes pour un petit nombre d’organisations, et nous les construisons pour qu’on puisse s’y fier. Nous sommes immatriculés au Rwanda et travaillons avec des clients dans le monde entier.',
+        'Nous avons créé Elite Algos Labs pour faire ce travail correctement. Nous prenons un petit nombre de clients et construisons des systèmes sur lesquels ils peuvent compter. Nous sommes immatriculés au Rwanda et travaillons avec des clients partout dans le monde.',
     },
     principles: {
-      eyebrow: 'Exigences',
+      eyebrow: 'Nos exigences',
       title: 'Ce à quoi nous nous tenons.',
-      lead: 'Ce ne sont pas des aspirations. Ce sont les critères selon lesquels nous évaluons notre propre travail.',
+      lead: 'Ce ne sont pas des slogans. Ce sont les critères selon lesquels nous vérifions notre propre travail.',
     },
     numbers: {
       eyebrow: 'En bref',
@@ -380,12 +380,12 @@ export const fr: Dictionary = {
     },
     team: {
       eyebrow: 'Équipe',
-      title: 'Les personnes responsables du travail.',
-      lead: 'Volontairement restreinte. Chaque mission est portée par des personnes dont vous connaîtrez le nom.',
+      title: 'Les personnes derrière le travail.',
+      lead: 'Volontairement petite. Sur chaque projet, vous travaillez avec des personnes dont vous connaîtrez le nom.',
     },
     cta: {
       title: 'Travaillons ensemble.',
-      body: 'Nous acceptons un nombre limité de missions simultanées. Si ce que vous construisez compte, parlez-nous-en.',
+      body: 'Nous ne prenons que quelques projets à la fois. Si ce que vous construisez compte, parlez-nous-en.',
       action: 'Entamer la conversation',
     },
   },
@@ -397,29 +397,29 @@ export const fr: Dictionary = {
     hero: {
       eyebrow: 'Contact',
       title: 'Parlez à un ingénieur.',
-      lead: 'Pas un formulaire qui alimente une file commerciale. Décrivez le problème et quelqu’un capable de construire la solution vous répondra.',
+      lead: 'Ce n’est pas un formulaire qui atterrit dans une file commerciale. Décrivez le problème et quelqu’un capable de construire la solution vous répondra.',
     },
     channels: {
-      title: 'Contacts directs',
+      title: 'Écrivez-nous directement',
       business: {
         label: 'Nouveaux projets',
-        description: 'Cadrage, propositions et discussions techniques.',
+        description: 'Devis, propositions et questions sur votre projet.',
       },
       general: {
         label: 'Demandes générales',
-        description: 'Tout le reste — partenariats, presse, achats.',
+        description: 'Tout le reste — partenariats, presse et fournisseurs.',
       },
       founder: {
         label: 'Bureau du fondateur',
-        description: 'Sujets stratégiques, confidentiels ou de direction.',
+        description: 'Sujets privés ou de direction.',
       },
     },
     response: {
       title: 'La suite',
       steps: {
-        one: 'Nous lisons chaque message nous-mêmes — aucun tri automatique.',
-        two: 'Vous recevez une réponse sous deux jours ouvrés, écrite par une personne.',
-        three: 'S’il y a une adéquation, nous organisons un échange technique. Sinon, nous le disons et vous orientons vers un meilleur interlocuteur.',
+        one: 'Nous lisons chaque message nous-mêmes. Rien n’est trié par un robot.',
+        two: 'Une vraie personne vous répond sous deux jours ouvrés.',
+        three: 'Si nous sommes faits pour travailler ensemble, nous organisons un appel. Sinon, nous vous le disons et vous orientons vers un meilleur interlocuteur.',
       },
     },
     form: {
@@ -432,18 +432,18 @@ export const fr: Dictionary = {
       company: 'Organisation',
       companyPlaceholder: 'Entreprise ou institution',
       companyOptional: 'facultatif',
-      topic: 'De quoi s’agit-il ?',
+      topic: 'De quoi s’agit-il ?',
       topicOptions: {
         project: 'Un nouveau projet',
-        consulting: 'Conseil ou audit en IA',
+        consulting: 'Conseil ou revue en IA',
         partnership: 'Partenariat',
         careers: 'Carrières',
         other: 'Autre sujet',
       },
-      budget: 'Budget indicatif',
+      budget: 'Budget approximatif',
       budgetOptional: 'facultatif',
       budgetOptions: {
-        undecided: 'Non défini à ce stade',
+        undecided: 'Pas encore sûr',
         under25: 'Moins de 25 000 $',
         from25: '25 000 $ – 100 000 $',
         from100: '100 000 $ – 500 000 $',
@@ -451,9 +451,9 @@ export const fr: Dictionary = {
       },
       message: 'Votre message',
       messagePlaceholder:
-        'Que cherchez-vous à accomplir, à quoi ressemble la situation actuelle, et à quoi ressemblerait le succès en chiffres ?',
+        'Que voulez-vous accomplir ? Comment cela se passe-t-il aujourd’hui, et à quoi ressemblerait le succès en chiffres ?',
       consent:
-        'J’accepte qu’Elite Algos Labs conserve ce message afin de répondre à ma demande.',
+        'J’accepte qu’Elite Algos Labs conserve ce message afin de me répondre.',
       submit: 'Envoyer le message',
       submitting: 'Envoi en cours…',
       successTitle: 'Message bien reçu.',
@@ -473,38 +473,38 @@ export const fr: Dictionary = {
     hero: {
       eyebrow: 'Carrières',
       title: 'Nous constituons l’équipe.',
-      lead: 'Elite Algos Labs réunit un groupe restreint d’ingénieurs, de designers et de chercheurs d’exception. Les postes sont en cours de définition.',
+      lead: 'Elite Algos Labs réunit une petite équipe d’ingénieurs, de designers et de chercheurs talentueux. Nous définissons les premiers postes en ce moment.',
       badge: 'Ouverture prochaine',
     },
     what: {
-      eyebrow: 'Ce que nous rechercherons',
-      title: 'Un profil d’ingénieur bien particulier.',
+      eyebrow: 'Ce que nous recherchons',
+      title: 'Un certain type d’ingénieur.',
       lead: 'Les postes seront publiés ici en premier. D’ici là, voici le niveau d’exigence auquel nous recrutons.',
       traits: {
         depth: {
-          title: 'La profondeur plutôt que l’étendue',
-          body: 'Des personnes qui sont allées réellement loin sur un sujet et savent expliquer pourquoi les parties difficiles l’étaient.',
+          title: 'Une vraie profondeur',
+          body: 'Des personnes qui sont allées loin sur un sujet et savent expliquer pourquoi les parties difficiles l’étaient.',
         },
         ownership: {
           title: 'Le sens de la responsabilité',
-          body: 'Des ingénieurs qui considèrent l’incident de production, le test manquant et la documentation confuse comme étant à eux de corriger.',
+          body: 'Des ingénieurs qui, face à un problème — une fonctionnalité cassée, un test manquant, une doc peu claire — le corrigent sans qu’on le leur demande.',
         },
         clarity: {
-          title: 'La clarté à l’écrit',
-          body: 'Nous travaillons sur plusieurs fuseaux horaires et documentons tout. Bien écrire est ici une compétence d’ingénierie fondamentale, pas un bonus.',
+          title: 'Une écriture claire',
+          body: 'Nous travaillons sur plusieurs fuseaux horaires et notons tout par écrit. Bien écrire compte ici autant qu’un code propre.',
         },
         judgement: {
-          title: 'Le discernement sur le périmètre',
-          body: 'Savoir ce qu’il ne faut pas construire vaut davantage que la capacité à tout construire.',
+          title: 'Un bon jugement',
+          body: 'Savoir ce qu’il ne faut pas construire vaut plus que la capacité à tout construire.',
         },
       },
     },
     register: {
       eyebrow: 'Manifester son intérêt',
-      title: 'Être prévenu en premier.',
-      body: 'Envoyez-nous ce que vous avez construit et nous vous contacterons lorsqu’un poste correspondra. Joignez quelque chose dont vous êtes fier — du code, un article, un système, un produit.',
+      title: 'Être informé en premier.',
+      body: 'Envoyez-nous quelque chose que vous avez construit et nous vous recontacterons quand un poste correspondra. Partagez quelque chose dont vous êtes fier — du code, un article, un système ou un produit.',
       action: 'Écrire au fondateur',
-      note: 'Écrivez à founder@elitealgoslabs.com avec pour objet « Carrières ».',
+      note: 'Écrivez à founder@elitealgoslabs.com avec pour objet « Carrières ».',
     },
   },
 
@@ -515,7 +515,7 @@ export const fr: Dictionary = {
     hero: {
       eyebrow: 'Analyses',
       title: 'Notes de terrain.',
-      lead: 'Décisions d’architecture, arbitrages d’ingénierie et observations de terrain — écrits par celles et ceux qui construisent, pour celles et ceux qui devront trancher les mêmes questions.',
+      lead: 'Des enseignements pratiques et des arbitrages honnêtes tirés de nos projets — écrits par celles et ceux qui construisent, pour celles et ceux qui font face aux mêmes choix.',
     },
     featured: 'À la une',
     allArticles: 'Tous les articles',
@@ -527,7 +527,7 @@ export const fr: Dictionary = {
     shareLabel: 'Partager cet article',
     relatedTitle: 'À lire également',
     backToInsights: 'Toutes les analyses',
-    empty: 'Aucun article publié pour le moment. Les premiers sont en cours d’écriture.',
+    empty: 'Aucun article pour le moment. Les premiers sont en cours d’écriture.',
     tocTitle: 'Sur cette page',
   },
 
@@ -536,7 +536,7 @@ export const fr: Dictionary = {
   // ==========================================================================
   footer: {
     blurb:
-      'Elite Algos Labs LTD conçoit des systèmes d’intelligence artificielle pour les organisations qui en dépendent. Précision, confiance et longévité — par conception.',
+      'Elite Algos Labs LTD crée des logiciels et de l’IA pour les organisations qui en dépendent. Clair, fiable et conçu pour durer.',
     navTitle: 'Navigation',
     contactTitle: 'Contact',
     companyTitle: 'Société',
@@ -553,14 +553,14 @@ export const fr: Dictionary = {
   // VALIDATION
   // ==========================================================================
   validation: {
-    required: 'Ce champ est obligatoire.',
+    required: 'Merci de remplir ce champ.',
     nameTooShort: 'Veuillez saisir votre nom complet.',
     emailInvalid: 'Veuillez saisir une adresse email valide.',
-    messageTooShort: 'Merci de préciser un peu davantage — au moins 20 caractères.',
+    messageTooShort: 'Merci d’en dire un peu plus — au moins 20 caractères.',
     messageTooLong: 'Ce message dépasse la limite du formulaire. Merci de nous écrire directement.',
     consentRequired: 'Votre accord est nécessaire pour conserver votre message et y répondre.',
-    rateLimited: 'Trop de messages envoyés depuis cette adresse. Merci de réessayer sous peu.',
-    serverError: 'Nous n’avons pas pu traiter votre demande. Merci de réessayer.',
+    rateLimited: 'Trop de messages envoyés depuis cette adresse. Merci de réessayer bientôt.',
+    serverError: 'Nous n’avons pas pu envoyer votre message. Merci de réessayer.',
   },
 
   // ==========================================================================
@@ -576,7 +576,7 @@ export const fr: Dictionary = {
   error: {
     code: 'Erreur',
     title: 'Une erreur est survenue.',
-    body: 'Une erreur inattendue a interrompu cette page. L’incident a été consigné. Vous pouvez réessayer ou revenir à l’accueil.',
+    body: 'Une erreur inattendue a empêché cette page de se charger. Nous l’avons enregistrée. Vous pouvez réessayer ou revenir à l’accueil.',
     retry: 'Réessayer',
     action: 'Retour à l’accueil',
   },
