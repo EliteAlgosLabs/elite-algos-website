@@ -63,7 +63,9 @@ jobs:
         # Cheap backstop. The repository is public; a leaked token here is a
         # rotation emergency, so it is worth failing the build over.
         run: |
-          if git grep -nIE "ghp_[A-Za-z0-9]{20,}|github_pat_|BEGIN [A-Z ]*PRIVATE KEY" -- . ; then
+          # Exclude this workflow file: it necessarily contains the secret
+          # patterns as literal grep text, which would otherwise self-match.
+          if git grep -nIE "ghp_[A-Za-z0-9]{20,}|github_pat_|BEGIN [A-Z ]*PRIVATE KEY" -- . ':(exclude).github/workflows/ci.yml' ; then
             echo "::error::Possible secret committed"
             exit 1
           fi
