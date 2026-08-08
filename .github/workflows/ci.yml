@@ -37,6 +37,16 @@ jobs:
       - name: Lint
         run: npx eslint .
 
+      - name: Generate Next.js types
+        # Next.js writes PageProps/LayoutProps into .next/types during a build.
+        # tsconfig includes those files, so typecheck must run *after* they
+        # exist. On a clean CI checkout they don't yet, which is why typecheck
+        # failed on every run. This generates them without a full build.
+        env:
+          AUTH_SECRET: ci-placeholder-secret-not-used-for-real-sessions-000
+          NEXT_PUBLIC_SITE_URL: https://elitealgoslabs.com
+        run: npx next typegen
+
       - name: Typecheck
         run: npx tsc --noEmit
 
