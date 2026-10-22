@@ -6,6 +6,7 @@ import { Reveal, Stagger, StaggerItem } from '@/components/motion/primitives'
 import { Container, Hairline, Section, SectionHeading } from '@/components/ui/layout'
 import { Card } from '@/components/ui/card'
 import { Mark } from '@/components/brand/mark'
+import { IMAGES } from '@/lib/imagery'
 import { getDictionary } from '@/lib/i18n/dictionaries'
 import { isLocale } from '@/lib/i18n/config'
 import { buildPageMetadata } from '@/lib/seo'
@@ -49,7 +50,16 @@ export default async function AboutPage({ params }: PageProps<'/[locale]/about'>
 
   return (
     <>
-      <PageHero eyebrow={t.hero.eyebrow} title={t.hero.title} lead={t.hero.lead} />
+      <PageHero
+        eyebrow={t.hero.eyebrow}
+        title={t.hero.title}
+        lead={t.hero.lead}
+        image={{
+          src: IMAGES.pages.about,
+          alt: dict.imagery.aboutAlt,
+          caption: dict.imagery.aboutCaption,
+        }}
+      />
 
       {/* Story */}
       <Section spacing="tight">

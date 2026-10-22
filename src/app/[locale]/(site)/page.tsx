@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { Hero } from '@/components/sections/hero'
 import {
   CtaSection,
+  ImageBandSection,
   MissionSection,
   PhilosophySection,
   PortfolioPreviewSection,
@@ -45,6 +46,7 @@ export default async function HomePage({ params }: PageProps<'/[locale]'>) {
       <Hero locale={locale} dict={dict} />
       <MissionSection dict={dict} />
       <WhySection dict={dict} />
+      <ImageBandSection dict={dict} />
       <PhilosophySection dict={dict} />
       <PortfolioPreviewSection locale={locale} dict={dict} caseStudies={caseStudies} />
       <CtaSection locale={locale} dict={dict} />

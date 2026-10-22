@@ -7,6 +7,8 @@ import { Reveal, Stagger, StaggerItem } from '@/components/motion/primitives'
 import { Container, Hairline, Section, SectionHeading } from '@/components/ui/layout'
 import { Card } from '@/components/ui/card'
 import { IconTile } from '@/components/ui/icon'
+import { Photo } from '@/components/ui/photo'
+import { IMAGES } from '@/lib/imagery'
 import { getDictionary } from '@/lib/i18n/dictionaries'
 import { isLocale } from '@/lib/i18n/config'
 import { buildPageMetadata } from '@/lib/seo'
@@ -35,7 +37,12 @@ export default async function ServicesPage({ params }: PageProps<'/[locale]/serv
 
   return (
     <>
-      <PageHero eyebrow={t.hero.eyebrow} title={t.hero.title} lead={t.hero.lead} />
+      <PageHero
+        eyebrow={t.hero.eyebrow}
+        title={t.hero.title}
+        lead={t.hero.lead}
+        image={{ src: IMAGES.pages.services, alt: dict.imagery.servicesAlt }}
+      />
 
       <Section spacing="tight">
         <Container>
@@ -43,6 +50,16 @@ export default async function ServicesPage({ params }: PageProps<'/[locale]/serv
             {services.map((service) => (
               <StaggerItem key={service.slug}>
                 <Card className="flex h-full flex-col p-8 sm:p-10">
+                  {IMAGES.services[service.slug] ? (
+                    <Photo
+                      src={IMAGES.services[service.slug]}
+                      alt=""
+                      sizes="(min-width: 1024px) 40vw, 100vw"
+                      zoomOnHover
+                      rounded="rounded-xl"
+                      className="-mx-3 -mt-3 mb-8 aspect-[16/8] sm:-mx-5 sm:-mt-5"
+                    />
+                  ) : null}
                   <div className="flex items-center gap-4">
                     <IconTile name={service.icon} />
                     <h2 className="font-sans text-xl font-semibold leading-snug text-foreground">

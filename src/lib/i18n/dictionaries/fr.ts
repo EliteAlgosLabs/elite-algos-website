@@ -534,6 +534,30 @@ export const fr: Dictionary = {
   // ==========================================================================
   // PIED DE PAGE
   // ==========================================================================
+  // ==========================================================================
+  // IMAGERY
+  // ==========================================================================
+  imagery: {
+    heroAlt: 'Un bureau moderne et lumineux, avec de grandes fenêtres et des tables de réunion',
+    heroInsetAlt: 'Un ordinateur portable affichant un tableau de bord analytique en direct',
+    heroBadge: 'Kigali · Au service de clients du monde entier',
+    heroChip: 'Conçu, mesuré, et à vous',
+    missionAlt: 'Gros plan d’une carte électronique, avec ses processeurs et ses fines pistes de cuivre',
+    missionCaption: 'Conçu avec précision',
+    whyPrimaryAlt: 'Deux personnes planifient un projet ensemble, avec notes et ordinateurs sur le bureau',
+    whySecondaryAlt: 'Un espace de travail ordonné : ordinateur, carnet, stylos et une tasse de café',
+    whyCaption: 'Planifier ensemble. Construire ensemble.',
+    bandAlt: 'Des tours de bureaux en verre vues d’en bas, sur fond de ciel',
+    bandQuote: 'Clair. Fiable. Conçu pour durer.',
+    bandSub: 'Une IA et des logiciels qui fonctionnent encore longtemps après la mise en service.',
+    ctaAlt: 'Un ordinateur portable qui brille doucement dans une pièce sombre',
+    servicesAlt: 'Des lignes de code sur l’écran d’un ordinateur, dans une pièce sombre',
+    solutionsAlt: 'Un réseau lumineux de blocs connectés',
+    aboutAlt: 'Les tours du centre de Kigali, au Rwanda, à la tombée de la nuit',
+    aboutCaption: 'Kigali, Rwanda · Photo : Adrien K, CC BY 2.0',
+    contactAlt: 'Un espace de travail calme et lumineux, avec des plantes et un ordinateur près de la fenêtre',
+  },
+
   footer: {
     blurb:
       'Elite Algos Labs LTD crée des logiciels et de l’IA pour les organisations qui en dépendent. Clair, fiable et conçu pour durer.',

@@ -537,6 +537,30 @@ export const en = {
   // ==========================================================================
   // FOOTER
   // ==========================================================================
+  // ==========================================================================
+  // IMAGERY — alt text and captions for site photography
+  // ==========================================================================
+  imagery: {
+    heroAlt: 'A bright, modern open-plan office with large windows and meeting tables',
+    heroInsetAlt: 'A laptop showing a live analytics dashboard with charts',
+    heroBadge: 'Kigali · Serving clients worldwide',
+    heroChip: 'Built, measured, owned by you',
+    missionAlt: 'Close-up of a circuit board with processors and fine copper traces',
+    missionCaption: 'Engineered with precision',
+    whyPrimaryAlt: 'Two people planning a project together, with notes and laptops on a desk',
+    whySecondaryAlt: 'A tidy workspace with a laptop, notebook, pens and a cup of coffee',
+    whyCaption: 'Plan together. Build together.',
+    bandAlt: 'Glass office towers seen from below against the sky',
+    bandQuote: 'Clear. Reliable. Built to last.',
+    bandSub: 'AI and software that keeps working long after launch day.',
+    ctaAlt: 'A laptop glowing softly in a dark room',
+    servicesAlt: 'Lines of code on a laptop screen in a dark room',
+    solutionsAlt: 'A glowing network of connected blocks',
+    aboutAlt: 'The skyline of central Kigali, Rwanda, at dusk',
+    aboutCaption: 'Kigali, Rwanda · Photo: Adrien K, CC BY 2.0',
+    contactAlt: 'A calm, light-filled workspace with plants and a laptop by the window',
+  },
+
   footer: {
     blurb:
       'Elite Algos Labs LTD builds AI and software for organisations that rely on it. Clear, reliable and built to last.',

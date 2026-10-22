@@ -6,6 +6,8 @@ import { CtaSection } from '@/components/sections/home-sections'
 import { Reveal, Stagger, StaggerItem } from '@/components/motion/primitives'
 import { Container, Hairline, Section } from '@/components/ui/layout'
 import { IconTile } from '@/components/ui/icon'
+import { Photo } from '@/components/ui/photo'
+import { IMAGES } from '@/lib/imagery'
 import { getDictionary } from '@/lib/i18n/dictionaries'
 import { isLocale } from '@/lib/i18n/config'
 import { buildPageMetadata } from '@/lib/seo'
@@ -27,7 +29,12 @@ export default async function SolutionsPage({ params }: PageProps<'/[locale]/sol
 
   return (
     <>
-      <PageHero eyebrow={t.hero.eyebrow} title={t.hero.title} lead={t.hero.lead} />
+      <PageHero
+        eyebrow={t.hero.eyebrow}
+        title={t.hero.title}
+        lead={t.hero.lead}
+        image={{ src: IMAGES.pages.solutions, alt: dict.imagery.solutionsAlt }}
+      />
 
       <Section spacing="tight">
         <Container>
@@ -69,6 +76,17 @@ export default async function SolutionsPage({ params }: PageProps<'/[locale]/sol
                 </div>
 
                 <div className="grid gap-10 lg:col-span-7 sm:grid-cols-2 lg:gap-8">
+                  {IMAGES.solutions[solution.slug] ? (
+                    <Reveal className="sm:col-span-2" direction={index % 2 ? 'right' : 'left'}>
+                      <Photo
+                        src={IMAGES.solutions[solution.slug]}
+                        alt=""
+                        sizes="(min-width: 1024px) 55vw, 100vw"
+                        parallax
+                        className="aspect-[21/9] w-full"
+                      />
+                    </Reveal>
+                  ) : null}
                   <div>
                     <h3 className="eyebrow">{t.capabilitiesLabel}</h3>
                     <Stagger as="ul" className="mt-5 space-y-3.5">

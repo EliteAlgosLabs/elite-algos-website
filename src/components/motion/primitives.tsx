@@ -205,21 +205,25 @@ export function Entrance({
   className,
   delay = 0,
   duration = 0.9,
+  direction = 'up',
 }: {
   children: React.ReactNode
   className?: string
   delay?: number
   duration?: number
+  direction?: Direction
 }) {
   const reduced = useReducedMotion()
 
   if (reduced) return <div className={className}>{children}</div>
 
+  const offset = offsets[direction]
+
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, x: offset.x * 0.67, y: offset.y * 0.67 }}
+      animate={{ opacity: 1, x: 0, y: 0 }}
       transition={{ duration, delay, ease: EASE_OUT_EXPO }}
     >
       {children}

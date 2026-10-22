@@ -9,6 +9,7 @@ import { getDictionary } from '@/lib/i18n/dictionaries'
 import { isLocale } from '@/lib/i18n/config'
 import { buildPageMetadata } from '@/lib/seo'
 import { COMPANY } from '@/lib/brand'
+import { IMAGES } from '@/lib/imagery'
 
 export async function generateMetadata({ params }: PageProps<'/[locale]/contact'>): Promise<Metadata> {
   const { locale } = await params
@@ -34,7 +35,12 @@ export default async function ContactPage({ params }: PageProps<'/[locale]/conta
 
   return (
     <>
-      <PageHero eyebrow={t.hero.eyebrow} title={t.hero.title} lead={t.hero.lead} />
+      <PageHero
+        eyebrow={t.hero.eyebrow}
+        title={t.hero.title}
+        lead={t.hero.lead}
+        image={{ src: IMAGES.pages.contact, alt: dict.imagery.contactAlt }}
+      />
 
       <Section spacing="tight">
         <Container>

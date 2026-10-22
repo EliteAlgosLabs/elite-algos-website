@@ -11,6 +11,9 @@ import {
 } from '@/components/ui/layout'
 import { Card, LinkCard } from '@/components/ui/card'
 import { IconTile } from '@/components/ui/icon'
+import { Photo, PhotoCaption } from '@/components/ui/photo'
+import { IMAGES } from '@/lib/imagery'
+import Image from 'next/image'
 import { Mark } from '@/components/brand/mark'
 import { href, routes } from '@/lib/i18n/routes'
 import type { Locale } from '@/lib/i18n/config'
@@ -36,6 +39,17 @@ export function MissionSection({ dict }: { dict: Dictionary }) {
             </Reveal>
             <Reveal delay={0.06}>
               <h2 className="mt-6 text-4xl leading-[1.1] sm:text-5xl">{t.title}</h2>
+            </Reveal>
+            <Reveal delay={0.12}>
+              <Photo
+                src={IMAGES.home.mission}
+                alt={dict.imagery.missionAlt}
+                sizes="(min-width: 1024px) 38vw, 100vw"
+                parallax
+                className="mt-10 aspect-[16/10] w-full"
+              >
+                <PhotoCaption>{dict.imagery.missionCaption}</PhotoCaption>
+              </Photo>
             </Reveal>
           </div>
 
@@ -124,9 +138,11 @@ export function WhySection({ dict }: { dict: Dictionary }) {
   return (
     <Section tone="surface">
       <Container>
+        <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
+        <div className="lg:col-span-7">
         <SectionHeading eyebrow={t.eyebrow} title={t.title} lead={t.lead} />
 
-        <Stagger className="mt-16 grid gap-x-12 gap-y-12 sm:grid-cols-2">
+        <Stagger className="mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2">
           {points.map((point, index) => (
             <StaggerItem key={point.title}>
               <div className="flex gap-5">
@@ -141,8 +157,80 @@ export function WhySection({ dict }: { dict: Dictionary }) {
             </StaggerItem>
           ))}
         </Stagger>
+        </div>
+
+        <div className="relative lg:col-span-5">
+          <Reveal direction="left">
+            <Photo
+              src={IMAGES.home.whyPrimary}
+              alt={dict.imagery.whyPrimaryAlt}
+              sizes="(min-width: 1024px) 34vw, 100vw"
+              parallax
+              className="aspect-[4/5] w-full"
+            >
+              <PhotoCaption position="top-left">{dict.imagery.whyCaption}</PhotoCaption>
+            </Photo>
+          </Reveal>
+          <Reveal delay={0.15} className="absolute -bottom-10 -left-6 hidden w-1/2 sm:block">
+            <Photo
+              src={IMAGES.home.whySecondary}
+              alt={dict.imagery.whySecondaryAlt}
+              sizes="20vw"
+              rounded="rounded-2xl"
+              className="aspect-square w-full border-4 border-surface shadow-[0_24px_50px_-20px_rgb(0_0_0/0.45)]"
+            />
+          </Reveal>
+        </div>
+        </div>
       </Container>
     </Section>
+  )
+}
+
+/* ========================================================================== */
+/* IMAGE BAND                                                                 */
+/* ========================================================================== */
+
+/**
+ * Full-bleed parallax photograph with the brand line set over it. Breaks the
+ * run of text sections on the home page and gives the page a moment to breathe.
+ */
+export function ImageBandSection({ dict }: { dict: Dictionary }) {
+  const t = dict.imagery
+
+  return (
+    <section className="relative">
+      <Photo
+        src={IMAGES.home.band}
+        alt={t.bandAlt}
+        sizes="100vw"
+        parallax
+        rounded="rounded-none"
+        className="h-[62vh] min-h-[420px] w-full"
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10" />
+        <Container className="relative flex h-full items-center">
+          <div className="max-w-2xl">
+            <Reveal>
+              <div className="flex items-center gap-3">
+                <Mark className="h-3.5 w-auto text-gold-300" />
+                <span className="font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-white/70">
+                  Elite Algos Labs
+                </span>
+              </div>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <p className="mt-6 font-display text-[clamp(2.25rem,5.5vw,4.25rem)] font-light italic leading-[1.05] text-white">
+                {t.bandQuote}
+              </p>
+            </Reveal>
+            <Reveal delay={0.16}>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">{t.bandSub}</p>
+            </Reveal>
+          </div>
+        </Container>
+      </Photo>
+    </section>
   )
 }
 
@@ -331,13 +419,14 @@ export function CtaSection({ locale, dict }: { locale: Locale; dict: Dictionary 
   const t = dict.home.cta
 
   return (
-    <Section className="relative overflow-hidden border-t border-border" spacing="loose">
+    <Section className="relative isolate overflow-hidden border-t border-border" spacing="loose">
       <div aria-hidden="true" className="grid-field pointer-events-none absolute inset-0 opacity-60" />
       <AmbientField />
       <Mark className="pointer-events-none absolute -right-20 top-1/2 h-72 w-auto -translate-y-1/2 text-accent opacity-[0.04]" />
 
       <Container className="relative">
-        <div className="max-w-3xl">
+        <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
+        <div className="lg:col-span-7">
           <Reveal>
             <Eyebrow>{t.eyebrow}</Eyebrow>
           </Reveal>
@@ -373,6 +462,29 @@ export function CtaSection({ locale, dict }: { locale: Locale; dict: Dictionary 
               </a>
             </div>
           </Reveal>
+        </div>
+
+        <Reveal delay={0.1} direction="left" className="lg:col-span-5">
+          <div className="overflow-hidden rounded-3xl shadow-[0_30px_80px_-30px_rgb(0_0_0/0.5)]">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl">
+              <Image
+                src={IMAGES.home.cta}
+                alt={dict.imagery.ctaAlt}
+                fill
+                sizes="(min-width: 1024px) 38vw, 100vw"
+                className="object-cover motion-safe:animate-[ken-burns_24s_ease-in-out_infinite_alternate]"
+              />
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-accent/15 mix-blend-soft-light"
+              />
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10"
+              />
+            </div>
+          </div>
+        </Reveal>
         </div>
       </Container>
     </Section>

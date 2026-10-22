@@ -4,6 +4,8 @@ import { Mark } from '@/components/brand/mark'
 import { LatticeField } from '@/components/motion/lattice-field'
 import { Entrance, LineReveal } from '@/components/motion/primitives'
 import { AmbientField, Container } from '@/components/ui/layout'
+import { Photo } from '@/components/ui/photo'
+import { IMAGES } from '@/lib/imagery'
 import { href, routes } from '@/lib/i18n/routes'
 import type { Locale } from '@/lib/i18n/config'
 import type { Dictionary } from '@/lib/i18n/dictionaries'
@@ -23,6 +25,7 @@ import { cn } from '@/lib/utils'
  */
 export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const t = dict.home.hero
+  const img = dict.imagery
 
   return (
     <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden pt-18">
@@ -38,7 +41,8 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
       <LatticeField />
 
       <Container className="relative py-24">
-        <div className="max-w-4xl">
+        <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-10">
+        <div className="lg:col-span-7">
           <Entrance delay={0.1}>
             <div className="flex items-center gap-3">
               <Mark className="h-3.5 w-auto text-accent" />
@@ -48,7 +52,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
 
           <h1
             className={cn(
-              'mt-8 font-display text-[clamp(3rem,9vw,7.5rem)] font-light leading-[0.92]',
+              'mt-8 font-display text-[clamp(3rem,8vw,6.5rem)] font-light leading-[0.92]',
               'tracking-[-0.035em]',
             )}
           >
@@ -104,6 +108,52 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               </Link>
             </div>
           </Entrance>
+        </div>
+
+        {/* Photo collage. Main office photo with a floating dashboard inset and
+            two glass chips. Decorative motion is transform-only. */}
+        <div className="relative lg:col-span-5">
+          <Entrance delay={0.35} direction="left">
+            <Photo
+              src={IMAGES.home.hero}
+              alt={img.heroAlt}
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              preload
+              className="aspect-[4/5] w-full shadow-[0_30px_80px_-30px_rgb(0_0_0/0.45)] sm:aspect-[5/4] lg:aspect-[4/5]"
+            />
+          </Entrance>
+
+          <Entrance delay={0.6} className="absolute -bottom-8 -left-4 w-[52%] sm:-left-10">
+            <div className="motion-safe:animate-[float_7s_ease-in-out_infinite]">
+              <Photo
+                src={IMAGES.home.heroInset}
+                alt={img.heroInsetAlt}
+                sizes="(min-width: 1024px) 20vw, 50vw"
+                rounded="rounded-2xl"
+                className="aspect-[4/3] w-full border-4 border-background shadow-[0_24px_50px_-20px_rgb(0_0_0/0.5)]"
+              />
+            </div>
+          </Entrance>
+
+          <Entrance delay={0.75} className="absolute right-4 top-4 max-w-[calc(100%-2rem)]">
+            <div className="glass flex items-center gap-2.5 rounded-full px-4 py-2.5">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-accent opacity-60 motion-safe:animate-ping" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+              </span>
+              <span className="whitespace-nowrap font-mono text-[0.5625rem] uppercase tracking-[0.12em] text-foreground">
+                {img.heroBadge}
+              </span>
+            </div>
+          </Entrance>
+
+          <Entrance delay={0.85} className="absolute -right-2 bottom-16 hidden sm:-right-6 sm:block">
+            <div className="glass flex items-center gap-3 rounded-2xl px-4 py-3">
+              <Mark className="h-3 w-auto text-accent" />
+              <span className="text-sm font-medium text-foreground">{img.heroChip}</span>
+            </div>
+          </Entrance>
+        </div>
         </div>
       </Container>
 
