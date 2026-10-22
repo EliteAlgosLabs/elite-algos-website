@@ -13,17 +13,10 @@
 
 export const IMAGES = {
   home: {
-    /** Hero sequence, crossfaded. Put the first frame first: it is preloaded. */
-    heroSlides: [
-      '/images/hero-lightfield.jpg',
-      '/images/hero-towers.jpg',
-      '/images/kigali-convention-night.jpg',
-      '/images/hero-waves.jpg',
-    ] as const,
+    hero: '/images/hero-towers.jpg',
     mission: '/images/mission-circuit.jpg',
     whyVideo: { mp4: '/video/dusk-city.mp4', webm: '/video/dusk-city.webm', poster: '/images/dusk-city-poster.jpg' },
     whySecondary: '/images/why-desk.jpg',
-    band: '/images/kigali-green.jpg',
     cta: '/images/cta-laptop.jpg',
   },
   pages: {

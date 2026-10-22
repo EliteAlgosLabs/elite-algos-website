@@ -541,18 +541,6 @@ export const en = {
   // IMAGERY — alt text and captions for site photography
   // ==========================================================================
   imagery: {
-    heroBadge: 'Kigali · Serving clients worldwide',
-    heroSlidesLabel: 'Hero images',
-    heroSlides: {
-      one: 'A corridor of golden light points rushing toward a bright horizon',
-      oneCaption: 'Engineering at the speed of light',
-      two: 'Glass skyscrapers rising into the clouds, seen from street level',
-      twoCaption: 'Built for organisations that operate at scale',
-      three: 'The Kigali Convention Centre dome lit in blue, yellow and green at dusk',
-      threeCaption: 'Rooted in Kigali, Rwanda',
-      four: 'Flowing blue digital waves, like a living surface of data',
-      fourCaption: 'Data in motion, under your control',
-    },
     missionAlt: 'Close-up of a circuit board with processors and fine copper traces',
     missionCaption: 'Engineered with precision',
     whyVideoAlt: 'Aerial footage of a city skyline at dusk, lights coming on across the towers',
@@ -560,10 +548,6 @@ export const en = {
     whySecondaryAlt: 'A tidy workspace with a laptop, notebook, pens and a cup of coffee',
     whyStatValue: 'No hand-offs.',
     whyStatLabel: 'The people who plan it are the people who build it.',
-    bandAlt: 'Green hills of Kigali under a bright blue sky with white clouds',
-    bandEyebrow: 'Made in Kigali, for the world',
-    bandQuote: 'Clear. Reliable. Built to last.',
-    bandSub: 'AI and software that keeps working long after launch day.',
     ctaAlt: 'A laptop glowing softly in a dark room',
     servicesAlt: 'Lines of code on a laptop screen in a dark room',
     solutionsAlt: 'A glowing network of connected blocks',
@@ -590,8 +574,7 @@ export const en = {
     legalTitle: 'Legal',
     incorporation: 'Incorporation no.',
     rights: 'All rights reserved.',
-    photoCredits:
-      'Kigali photography from Wikimedia Commons, CC BY-SA 4.0: Kigali Convention Centre by Jim Joel; Kigali city by GATETE Pacifique; aerial of the Convention Centre by Emmanuel Kwizera. Other imagery: Unsplash and Mixkit.',
+    photoCredits: 'Imagery: Unsplash, Mixkit and Wikimedia Commons. Credits shown where required.',
     privacy: 'Privacy',
     terms: 'Terms',
     builtWith: 'Designed and engineered in-house.',

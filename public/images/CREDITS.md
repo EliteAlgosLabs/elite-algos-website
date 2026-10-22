@@ -6,9 +6,7 @@ All assets are self-hosted copies, resized and recompressed for the web.
 
 | File | Unsplash photo ID |
 |---|---|
-| hero-lightfield.jpg | photo-1488229297570-58520851e868 |
 | hero-towers.jpg | photo-1449157291145-7efd050a4d0e |
-| hero-waves.jpg | photo-1634017839464-5c339ebe3cb4 |
 | mission-circuit.jpg | photo-1518770660439-4636190af475 |
 | cta-laptop.jpg | photo-1531297484001-80022131f5a1 |
 | hero-services.jpg | photo-1488590528505-98d2b5aba04b |
@@ -39,7 +37,5 @@ Before adding any Mixkit clip, check that `copyrightNotice` is `Free` in the pag
 | File | Source | Author | Licence | Where credited |
 |---|---|---|---|---|
 | kigali-convention-aerial.jpg | [File:An aerial of Kigali Convention Center on June 19, 2019…](https://commons.wikimedia.org/wiki/File:An_aerial_of_Kigali_Convention_Center_on_June_19,_2019._Photo_by_Emmanuel_Kwizera.jpg) | Emmanuel Kwizera | CC BY-SA 4.0 | Caption on /about |
-| kigali-convention-night.jpg | [File:Kigali Convention center, Rwanda.jpg](https://commons.wikimedia.org/wiki/File:Kigali_Convention_center,_Rwanda.jpg) | Jim Joel | CC BY-SA 4.0 | Footer credits line |
-| kigali-green.jpg | [File:My city kigali.jpg](https://commons.wikimedia.org/wiki/File:My_city_kigali.jpg) | GATETE Pacifique | CC BY-SA 4.0 | Footer credits line |
 
 The CC BY-SA "share-alike" condition applies to modified versions of these photos. We only resize them and apply a CSS overlay.

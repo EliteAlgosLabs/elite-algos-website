@@ -2,16 +2,9 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
-import {
-  AnimatePresence,
-  motion,
-  useMotionValue,
-  useReducedMotion,
-  useSpring,
-} from 'motion/react'
+import { useRef } from 'react'
+import { motion, useMotionValue, useReducedMotion, useSpring } from 'motion/react'
 import { ArrowDown, ArrowUpRight } from 'lucide-react'
-import { Mark } from '@/components/brand/mark'
 import { LatticeField } from '@/components/motion/lattice-field'
 import { Entrance, LineReveal } from '@/components/motion/primitives'
 import { href, routes } from '@/lib/i18n/routes'
@@ -25,51 +18,18 @@ import { cn } from '@/lib/utils'
  *
  * A rounded, full-height media panel inset from the page edge. Inside it,
  * back to front:
- *   1. a crossfading photo sequence with a slow Ken Burns push on each slide
- *   2. a dark cinematic grade, so white type keeps contrast on any photo
+ *   1. one photograph of glass towers on a slow, endless zoom in and out
+ *   2. a dark cinematic grade, so white type keeps contrast
  *   3. the lattice field (canvas), the brand's moving structure
  *   4. a soft gold spotlight that follows the pointer (transform only)
  *   5. film grain
- *   6. content, glass chips and the slide progress rail
+ *   6. content
  *
- * Reduced motion: the first slide stays put, with no rotation, Ken Burns or
- * spotlight. Hidden tab: the timer pauses with the page.
+ * Reduced motion: the photo holds still and the spotlight is off.
  */
-
-const SLIDE_MS = 6500
-
 export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const t = dict.home.hero
-  const img = dict.imagery
   const reduced = useReducedMotion()
-
-  const slides = [
-    { src: IMAGES.home.heroSlides[0], alt: img.heroSlides.one, caption: img.heroSlides.oneCaption },
-    { src: IMAGES.home.heroSlides[1], alt: img.heroSlides.two, caption: img.heroSlides.twoCaption },
-    { src: IMAGES.home.heroSlides[2], alt: img.heroSlides.three, caption: img.heroSlides.threeCaption },
-    { src: IMAGES.home.heroSlides[3], alt: img.heroSlides.four, caption: img.heroSlides.fourCaption },
-  ]
-
-  const [index, setIndex] = useState(0)
-
-  useEffect(() => {
-    if (reduced) return
-    let timer: number | undefined
-    const start = () => {
-      stop()
-      timer = window.setInterval(() => setIndex((i) => (i + 1) % slides.length), SLIDE_MS)
-    }
-    const stop = () => {
-      if (timer) window.clearInterval(timer)
-    }
-    const onVisibility = () => (document.hidden ? stop() : start())
-    start()
-    document.addEventListener('visibilitychange', onVisibility)
-    return () => {
-      stop()
-      document.removeEventListener('visibilitychange', onVisibility)
-    }
-  }, [reduced, slides.length])
 
   // Pointer spotlight. Spring-smoothed and transform-only.
   const panelRef = useRef<HTMLDivElement>(null)
@@ -86,8 +46,6 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
     my.set(event.clientY - rect.top - 300)
   }
 
-  const slide = slides[index]
-
   return (
     <section className="relative isolate px-2 pb-4 pt-20 sm:px-4 sm:pt-22 lg:px-6">
       <div
@@ -99,35 +57,19 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           'shadow-[0_40px_120px_-40px_rgb(0_0_0/0.6)]',
         )}
       >
-        {/* 1. Photo sequence */}
-        <div aria-hidden="true" className="absolute inset-0 -z-10">
-          <AnimatePresence initial={false}>
-            <motion.div
-              key={slide.src}
-              className="absolute inset-0"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <motion.div
-                className="absolute inset-0"
-                initial={{ scale: reduced ? 1 : 1.12 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: reduced ? 0 : (SLIDE_MS + 1600) / 1000, ease: 'linear' }}
-              >
-                <Image
-                  src={slide.src}
-                  alt=""
-                  fill
-                  sizes="100vw"
-                  preload={index === 0}
-                  quality={90}
-                  className="object-cover"
-                />
-              </motion.div>
-            </motion.div>
-          </AnimatePresence>
+        {/* 1. Photo with an endless slow zoom */}
+        <div aria-hidden="true" className="absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute inset-0 motion-safe:animate-[hero-zoom_22s_ease-in-out_infinite_alternate]">
+            <Image
+              src={IMAGES.home.hero}
+              alt=""
+              fill
+              sizes="100vw"
+              preload
+              quality={90}
+              className="object-cover"
+            />
+          </div>
         </div>
 
         {/* 2. Cinematic grade */}
@@ -164,7 +106,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-gold-400" />
               </span>
               <span className="font-mono text-[0.625rem] uppercase tracking-[0.16em] text-white/85">
-                {img.heroBadge}
+                {t.eyebrow}
               </span>
             </div>
           </Entrance>
@@ -218,59 +160,9 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           </Entrance>
         </div>
 
-        {/* Bottom rail: slide caption + progress */}
-        <div className="relative mx-auto flex w-full max-w-7xl items-end justify-between gap-6 px-5 pb-6 sm:px-10 sm:pb-8 lg:px-14">
-          <div className="min-w-0">
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.p
-                key={slide.caption}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.6 }}
-                className="flex items-center gap-2.5 truncate font-mono text-[0.625rem] uppercase tracking-[0.14em] text-white/70"
-              >
-                <Mark className="h-2.5 w-auto shrink-0 text-gold-400" />
-                <span className="truncate">{slide.caption}</span>
-              </motion.p>
-            </AnimatePresence>
-            <span className="sr-only">{slide.alt}</span>
-          </div>
-
-          <div className="flex shrink-0 items-center gap-2" role="tablist" aria-label={img.heroSlidesLabel}>
-            {slides.map((s, i) => (
-              <button
-                key={s.src}
-                type="button"
-                role="tab"
-                aria-selected={i === index}
-                aria-label={`${i + 1} / ${slides.length}`}
-                onClick={() => setIndex(i)}
-                className="group relative h-8 w-8 sm:w-12"
-              >
-                <span className="absolute inset-x-0 top-1/2 h-[2px] -translate-y-1/2 overflow-hidden rounded-full bg-white/25">
-                  <span
-                    key={i === index ? `on-${index}` : `off-${i}`}
-                    className={cn(
-                      'absolute inset-0 origin-left rounded-full bg-gold-400',
-                      i === index
-                        ? reduced
-                          ? 'scale-x-100'
-                          : 'animate-[progress_6.5s_linear_forwards]'
-                        : i < index
-                          ? 'scale-x-100 opacity-60'
-                          : 'scale-x-0',
-                    )}
-                  />
-                </span>
-              </button>
-            ))}
-          </div>
-        </div>
-
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-24 hidden justify-center sm:flex"
+          className="pointer-events-none absolute inset-x-0 bottom-8 hidden justify-center sm:flex"
         >
           <ArrowDown className="h-4 w-4 text-white/60 motion-safe:animate-[scroll-hint_2.4s_ease-in-out_infinite]" />
         </div>

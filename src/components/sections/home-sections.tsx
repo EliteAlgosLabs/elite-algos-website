@@ -196,53 +196,11 @@ export function WhySection({ dict }: { dict: Dictionary }) {
 }
 
 /* ========================================================================== */
-/* IMAGE BAND                                                                 */
+/* CAPABILITY TICKER                                                          */
 /* ========================================================================== */
 
-/**
- * Full-bleed parallax photograph with the brand line set over it. Breaks the
- * run of text sections on the home page and gives the page a moment to breathe.
- */
-export function ImageBandSection({ dict }: { dict: Dictionary }) {
-  const t = dict.imagery
-
-  return (
-    <section className="relative">
-      <Marquee items={t.marquee} />
-      <Photo
-        src={IMAGES.home.band}
-        alt={t.bandAlt}
-        sizes="100vw"
-        parallax
-        tint={false}
-        rounded="rounded-none"
-        className="h-[70vh] min-h-[460px] w-full"
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-        <Container className="relative flex h-full items-center">
-          <div className="max-w-2xl">
-            <Reveal>
-              <div className="flex items-center gap-3">
-                <Mark className="h-3.5 w-auto text-gold-300" />
-                <span className="font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-white/80">
-                  {t.bandEyebrow}
-                </span>
-              </div>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <p className="mt-6 font-display text-[clamp(2.25rem,5.5vw,4.25rem)] font-light italic leading-[1.05] text-white">
-                {t.bandQuote}
-              </p>
-            </Reveal>
-            <Reveal delay={0.16}>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">{t.bandSub}</p>
-            </Reveal>
-          </div>
-        </Container>
-      </Photo>
-    </section>
-  )
+export function MarqueeSection({ dict }: { dict: Dictionary }) {
+  return <Marquee items={dict.imagery.marquee} />
 }
 
  /**

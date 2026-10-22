@@ -538,18 +538,6 @@ export const fr: Dictionary = {
   // IMAGERY
   // ==========================================================================
   imagery: {
-    heroBadge: 'Kigali · Au service de clients du monde entier',
-    heroSlidesLabel: 'Images d’accueil',
-    heroSlides: {
-      one: 'Un couloir de points de lumière dorée filant vers un horizon éclatant',
-      oneCaption: 'L’ingénierie à la vitesse de la lumière',
-      two: 'Des gratte-ciel de verre s’élevant dans les nuages, vus depuis la rue',
-      twoCaption: 'Conçu pour les organisations qui opèrent à grande échelle',
-      three: 'Le dôme du Kigali Convention Centre illuminé en bleu, jaune et vert au crépuscule',
-      threeCaption: 'Ancrés à Kigali, au Rwanda',
-      four: 'Des vagues numériques bleues, comme une surface vivante de données',
-      fourCaption: 'Vos données en mouvement, sous votre contrôle',
-    },
     missionAlt: 'Gros plan d’une carte électronique, avec ses processeurs et ses fines pistes de cuivre',
     missionCaption: 'Conçu avec précision',
     whyVideoAlt: 'Vue aérienne d’une ville au crépuscule, les lumières s’allumant dans les tours',
@@ -557,10 +545,6 @@ export const fr: Dictionary = {
     whySecondaryAlt: 'Un espace de travail ordonné : ordinateur, carnet, stylos et une tasse de café',
     whyStatValue: 'Sans intermédiaire.',
     whyStatLabel: 'Ceux qui planifient votre projet sont ceux qui le construisent.',
-    bandAlt: 'Les collines verdoyantes de Kigali sous un ciel bleu et des nuages blancs',
-    bandEyebrow: 'Conçu à Kigali, pour le monde entier',
-    bandQuote: 'Clair. Fiable. Conçu pour durer.',
-    bandSub: 'Une IA et des logiciels qui fonctionnent encore longtemps après la mise en service.',
     ctaAlt: 'Un ordinateur portable qui brille doucement dans une pièce sombre',
     servicesAlt: 'Des lignes de code sur l’écran d’un ordinateur, dans une pièce sombre',
     solutionsAlt: 'Un réseau lumineux de blocs connectés',
@@ -587,8 +571,7 @@ export const fr: Dictionary = {
     legalTitle: 'Mentions légales',
     incorporation: 'N° d’immatriculation',
     rights: 'Tous droits réservés.',
-    photoCredits:
-      'Photos de Kigali issues de Wikimedia Commons, CC BY-SA 4.0 : Kigali Convention Centre par Jim Joel ; ville de Kigali par GATETE Pacifique ; vue aérienne du Convention Centre par Emmanuel Kwizera. Autres visuels : Unsplash et Mixkit.',
+    photoCredits: 'Visuels : Unsplash, Mixkit et Wikimedia Commons. Crédits indiqués lorsque requis.',
     privacy: 'Confidentialité',
     terms: 'Conditions',
     builtWith: 'Conçu et développé en interne.',
