@@ -1,17 +1,15 @@
-# Photography credits
+# Photography and footage credits
 
-All photographs are self-hosted copies, resized and recompressed for the web.
+All assets are self-hosted copies, resized and recompressed for the web.
 
 ## Unsplash: Unsplash License (free for commercial use, no attribution required)
 
 | File | Unsplash photo ID |
 |---|---|
-| hero-office.jpg | photo-1497366811353-6870744d04b2 |
-| hero-dashboard.jpg | photo-1551288049-bebda4e38f71 |
+| hero-lightfield.jpg | photo-1488229297570-58520851e868 |
+| hero-towers.jpg | photo-1449157291145-7efd050a4d0e |
+| hero-waves.jpg | photo-1634017839464-5c339ebe3cb4 |
 | mission-circuit.jpg | photo-1518770660439-4636190af475 |
-| why-planning.jpg | photo-1454165804606-c3d57bc86b40 |
-| why-desk.jpg | photo-1497032628192-86f99bcd76bc |
-| band-towers.jpg | photo-1486406146926-c627a92ad1ab |
 | cta-laptop.jpg | photo-1531297484001-80022131f5a1 |
 | hero-services.jpg | photo-1488590528505-98d2b5aba04b |
 | hero-solutions.jpg | photo-1639322537228-f710d846310a |
@@ -25,10 +23,23 @@ All photographs are self-hosted copies, resized and recompressed for the web.
 | sol-automation.jpg | photo-1550751827-4bd374c3f58b |
 | sol-private.jpg | photo-1558494949-ef010cbdcc31 |
 | sol-data.jpg | photo-1460925895917-afdab827c52f |
-| sol-web.jpg | photo-1517694712202-14dd9538aa97 |
+| sol-network-cubes.jpg | photo-1639762681485-074b7f938ba0 |
 
-## Wikimedia Commons
+## Mixkit: Mixkit Stock Video Free License (commercial use, no attribution required)
 
-| File | Source | Author | Licence |
-|---|---|---|---|
-| kigali-skyline.jpg | [File:Kigali2018Cropped.jpg](https://commons.wikimedia.org/wiki/File:Kigali2018Cropped.jpg) | Adrien K (Flickr) | CC BY 2.0. Attribution is required and is shown in the photo caption on /about. |
+| File | Source |
+|---|---|
+| video/dusk-city.mp4, video/dusk-city.webm, images/dusk-city-poster.jpg | mixkit.co, "Tour high above a city at dusk" (#41375). The page's licence metadata is `copyrightNotice: Free` / `#videoFree`. |
+
+Clips marked "Mixkit Restricted License" are personal use only. **Do not use them.**
+Before adding any Mixkit clip, check that `copyrightNotice` is `Free` in the page's metadata.
+
+## Wikimedia Commons: attribution required
+
+| File | Source | Author | Licence | Where credited |
+|---|---|---|---|---|
+| kigali-convention-aerial.jpg | [File:An aerial of Kigali Convention Center on June 19, 2019…](https://commons.wikimedia.org/wiki/File:An_aerial_of_Kigali_Convention_Center_on_June_19,_2019._Photo_by_Emmanuel_Kwizera.jpg) | Emmanuel Kwizera | CC BY-SA 4.0 | Caption on /about |
+| kigali-convention-night.jpg | [File:Kigali Convention center, Rwanda.jpg](https://commons.wikimedia.org/wiki/File:Kigali_Convention_center,_Rwanda.jpg) | Jim Joel | CC BY-SA 4.0 | Footer credits line |
+| kigali-green.jpg | [File:My city kigali.jpg](https://commons.wikimedia.org/wiki/File:My_city_kigali.jpg) | GATETE Pacifique | CC BY-SA 4.0 | Footer credits line |
+
+The CC BY-SA "share-alike" condition applies to modified versions of these photos. We only resize them and apply a CSS overlay.

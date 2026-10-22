@@ -12,6 +12,7 @@ import {
 import { Card, LinkCard } from '@/components/ui/card'
 import { IconTile } from '@/components/ui/icon'
 import { Photo, PhotoCaption } from '@/components/ui/photo'
+import { AmbientVideo } from '@/components/ui/ambient-video'
 import { IMAGES } from '@/lib/imagery'
 import Image from 'next/image'
 import { Mark } from '@/components/brand/mark'
@@ -46,6 +47,7 @@ export function MissionSection({ dict }: { dict: Dictionary }) {
                 alt={dict.imagery.missionAlt}
                 sizes="(min-width: 1024px) 38vw, 100vw"
                 parallax
+                reveal
                 className="mt-10 aspect-[16/10] w-full"
               >
                 <PhotoCaption>{dict.imagery.missionCaption}</PhotoCaption>
@@ -161,24 +163,30 @@ export function WhySection({ dict }: { dict: Dictionary }) {
 
         <div className="relative lg:col-span-5">
           <Reveal direction="left">
-            <Photo
-              src={IMAGES.home.whyPrimary}
-              alt={dict.imagery.whyPrimaryAlt}
-              sizes="(min-width: 1024px) 34vw, 100vw"
-              parallax
-              className="aspect-[4/5] w-full"
+            <AmbientVideo
+              mp4={IMAGES.home.whyVideo.mp4}
+              webm={IMAGES.home.whyVideo.webm}
+              poster={IMAGES.home.whyVideo.poster}
+              alt={dict.imagery.whyVideoAlt}
+              className="aspect-[4/5] w-full rounded-3xl shadow-[0_30px_80px_-30px_rgb(0_0_0/0.5)] sm:aspect-[16/11] lg:aspect-[4/5]"
             >
-              <PhotoCaption position="top-left">{dict.imagery.whyCaption}</PhotoCaption>
-            </Photo>
+              <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+              <div aria-hidden="true" className="film-grain absolute inset-0" />
+              <span className="glass-dark absolute left-4 top-4 z-10 inline-flex items-center gap-2 rounded-full px-3 py-1.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-red-500 motion-safe:animate-pulse" />
+                <span className="font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-white/90">Live</span>
+              </span>
+              <p className="absolute bottom-5 left-5 right-5 z-10 font-display text-xl italic leading-snug text-white sm:left-auto sm:max-w-[55%] sm:text-right sm:text-2xl">
+                {dict.imagery.whyCaption}
+              </p>
+              <span aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10" />
+            </AmbientVideo>
           </Reveal>
-          <Reveal delay={0.15} className="absolute -bottom-10 -left-6 hidden w-1/2 sm:block">
-            <Photo
-              src={IMAGES.home.whySecondary}
-              alt={dict.imagery.whySecondaryAlt}
-              sizes="20vw"
-              rounded="rounded-2xl"
-              className="aspect-square w-full border-4 border-surface shadow-[0_24px_50px_-20px_rgb(0_0_0/0.45)]"
-            />
+          <Reveal delay={0.2} className="absolute -bottom-8 -left-4 hidden sm:block lg:-left-10">
+            <div className="glass rounded-2xl px-5 py-4 motion-safe:animate-[float_7s_ease-in-out_infinite]">
+              <p className="font-display text-3xl italic leading-none text-brushed">{dict.imagery.whyStatValue}</p>
+              <p className="mt-2 max-w-[12rem] text-xs leading-snug text-muted">{dict.imagery.whyStatLabel}</p>
+            </div>
           </Reveal>
         </div>
         </div>
@@ -200,22 +208,25 @@ export function ImageBandSection({ dict }: { dict: Dictionary }) {
 
   return (
     <section className="relative">
+      <Marquee items={t.marquee} />
       <Photo
         src={IMAGES.home.band}
         alt={t.bandAlt}
         sizes="100vw"
         parallax
+        tint={false}
         rounded="rounded-none"
-        className="h-[62vh] min-h-[420px] w-full"
+        className="h-[70vh] min-h-[460px] w-full"
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
         <Container className="relative flex h-full items-center">
           <div className="max-w-2xl">
             <Reveal>
               <div className="flex items-center gap-3">
                 <Mark className="h-3.5 w-auto text-gold-300" />
-                <span className="font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-white/70">
-                  Elite Algos Labs
+                <span className="font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-white/80">
+                  {t.bandEyebrow}
                 </span>
               </div>
             </Reveal>
@@ -231,6 +242,42 @@ export function ImageBandSection({ dict }: { dict: Dictionary }) {
         </Container>
       </Photo>
     </section>
+  )
+}
+
+ /**
+ * Endless capability ticker. Two copies of the list sit on one track that slides
+ * by -50%, so the loop is seamless. Hidden from screen readers because the
+ * capabilities are listed properly on the Solutions page. Static under reduced
+ * motion.
+ */
+function Marquee({ items }: { items: string[] }) {
+  const row = (hidden: boolean) => (
+    <ul aria-hidden={hidden || undefined} className="flex shrink-0 items-center">
+      {items.map((item) => (
+        <li key={item} className="flex items-center gap-8 pr-8">
+          <span className="whitespace-nowrap font-display text-2xl font-light italic text-foreground sm:text-4xl">
+            {item}
+          </span>
+          <Mark className="h-3 w-auto shrink-0 text-accent" />
+        </li>
+      ))}
+    </ul>
+  )
+  return (
+    <div
+      aria-hidden="true"
+      className="relative overflow-hidden border-y border-border bg-surface py-6 sm:py-8"
+      style={{
+        maskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
+        WebkitMaskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
+      }}
+    >
+      <div className="flex w-max motion-safe:animate-[marquee_40s_linear_infinite]">
+        {row(false)}
+        {row(true)}
+      </div>
+    </div>
   )
 }
 

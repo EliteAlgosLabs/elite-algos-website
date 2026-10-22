@@ -83,6 +83,7 @@ export default async function SolutionsPage({ params }: PageProps<'/[locale]/sol
                         alt=""
                         sizes="(min-width: 1024px) 55vw, 100vw"
                         parallax
+                        reveal
                         className="aspect-[21/9] w-full"
                       />
                     </Reveal>

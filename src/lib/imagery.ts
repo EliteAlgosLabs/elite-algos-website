@@ -1,31 +1,38 @@
 /**
- * Site photography: one registry so a swap is a one-line change.
+ * Site photography and footage, kept in one registry so swapping a file means
+ * changing one line.
  *
- * Every file lives in `public/images/`, is self-hosted (no hot-linking), and is
- * free for commercial use. Sources and licences are listed in
- * `public/images/CREDITS.md`. Keep that file in step when adding a photo.
+ * Every file lives in `public/images/` or `public/video/` and is hosted here,
+ * not hot-linked. All of it is free for commercial use. Sources, authors and
+ * licences are listed in `public/images/CREDITS.md`. Update that file whenever
+ * you add an asset.
  *
- * House style: places, desks, screens and hardware. No posed people. Hands at
- * work are fine.
+ * House style: places, architecture, light and hardware. No posed people and
+ * no hands.
  */
 
 export const IMAGES = {
   home: {
-    hero: '/images/hero-office.jpg',
-    heroInset: '/images/hero-dashboard.jpg',
+    /** Hero sequence, crossfaded. Put the first frame first: it is preloaded. */
+    heroSlides: [
+      '/images/hero-lightfield.jpg',
+      '/images/hero-towers.jpg',
+      '/images/kigali-convention-night.jpg',
+      '/images/hero-waves.jpg',
+    ] as const,
     mission: '/images/mission-circuit.jpg',
-    whyPrimary: '/images/why-planning.jpg',
+    whyVideo: { mp4: '/video/dusk-city.mp4', webm: '/video/dusk-city.webm', poster: '/images/dusk-city-poster.jpg' },
     whySecondary: '/images/why-desk.jpg',
-    band: '/images/band-towers.jpg',
+    band: '/images/kigali-green.jpg',
     cta: '/images/cta-laptop.jpg',
   },
   pages: {
     services: '/images/hero-services.jpg',
     solutions: '/images/hero-solutions.jpg',
-    about: '/images/kigali-skyline.jpg',
+    about: '/images/kigali-convention-aerial.jpg',
     contact: '/images/hero-contact.jpg',
   },
-  /** Keyed by content slug. A slug with no entry simply renders no photo. */
+  /** Keyed by content slug. A slug with no entry renders no photo. */
   services: {
     'ai-consulting': '/images/svc-consulting.jpg',
     'custom-platforms': '/images/svc-platforms.jpg',
@@ -38,6 +45,6 @@ export const IMAGES = {
     'enterprise-automation': '/images/sol-automation.jpg',
     'private-deployments': '/images/sol-private.jpg',
     'data-intelligence': '/images/sol-data.jpg',
-    'web-platforms': '/images/sol-web.jpg',
+    'web-platforms': '/images/sol-network-cubes.jpg',
   } as Record<string, string>,
 } as const

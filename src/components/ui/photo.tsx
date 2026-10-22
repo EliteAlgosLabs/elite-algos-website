@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useRef } from 'react'
-import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
+import { motion, useInView, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { cn } from '@/lib/utils'
 
 /* ============================================================================
@@ -32,6 +32,7 @@ export function Photo({
   zoomOnHover = false,
   tint = true,
   rounded = 'rounded-3xl',
+  reveal = false,
   children,
 }: {
   src: string
@@ -45,6 +46,8 @@ export function Photo({
   zoomOnHover?: boolean
   tint?: boolean
   rounded?: string
+  /** Gold curtain wipe the first time the photo scrolls into view. */
+  reveal?: boolean
   /** Overlay content (captions, badges). Rendered above the tint. */
   children?: React.ReactNode
 }) {
@@ -53,6 +56,8 @@ export function Photo({
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
   const y = useTransform(scrollYProgress, [0, 1], ['-7%', '7%'])
   const drift = parallax && !reduced
+  const inView = useInView(ref, { once: true, amount: 0.3 })
+  const curtain = reveal && !reduced
 
   return (
     <div
@@ -66,6 +71,9 @@ export function Photo({
       <motion.div
         className={cn('absolute inset-0', drift && '-inset-y-[9%]')}
         style={drift ? { y } : undefined}
+        initial={curtain ? { scale: 1.25 } : false}
+        animate={curtain ? (inView ? { scale: 1 } : { scale: 1.25 }) : undefined}
+        transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
       >
         <Image
           src={src}
@@ -100,6 +108,25 @@ export function Photo({
         aria-hidden="true"
         className={cn('pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10', rounded)}
       />
+
+      {curtain ? (
+        <>
+          <motion.span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 z-20 origin-right bg-gold-400"
+            initial={{ scaleX: 1 }}
+            animate={inView ? { scaleX: 0 } : { scaleX: 1 }}
+            transition={{ duration: 1.1, delay: 0.15, ease: [0.83, 0, 0.17, 1] }}
+          />
+          <motion.span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 z-20 origin-right bg-ink-950"
+            initial={{ scaleX: 1 }}
+            animate={inView ? { scaleX: 0 } : { scaleX: 1 }}
+            transition={{ duration: 1.1, ease: [0.83, 0, 0.17, 1] }}
+          />
+        </>
+      ) : null}
 
       {children}
     </div>

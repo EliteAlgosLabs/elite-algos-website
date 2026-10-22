@@ -67,6 +67,7 @@ export function PageHero({
                 alt={image.alt}
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 preload
+                reveal
                 className="aspect-[16/10] w-full shadow-[0_30px_80px_-30px_rgb(0_0_0/0.45)] lg:aspect-[4/5]"
               >
                 {image.caption ? <PhotoCaption>{image.caption}</PhotoCaption> : null}

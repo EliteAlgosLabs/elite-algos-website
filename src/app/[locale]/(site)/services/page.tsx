@@ -56,6 +56,7 @@ export default async function ServicesPage({ params }: PageProps<'/[locale]/serv
                       alt=""
                       sizes="(min-width: 1024px) 40vw, 100vw"
                       zoomOnHover
+                      reveal
                       rounded="rounded-xl"
                       className="-mx-3 -mt-3 mb-8 aspect-[16/8] sm:-mx-5 sm:-mt-5"
                     />
