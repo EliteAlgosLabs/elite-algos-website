@@ -36,6 +36,6 @@ Before adding any Mixkit clip, check that `copyrightNotice` is `Free` in the pag
 
 | File | Source | Author | Licence | Where credited |
 |---|---|---|---|---|
-| kigali-convention-aerial.jpg | [File:An aerial of Kigali Convention Center on June 19, 2019…](https://commons.wikimedia.org/wiki/File:An_aerial_of_Kigali_Convention_Center_on_June_19,_2019._Photo_by_Emmanuel_Kwizera.jpg) | Emmanuel Kwizera | CC BY-SA 4.0 | Caption on /about |
+| rwanda-lake-kivu.jpg | [File:Lake kivu Rusizi.jpg](https://commons.wikimedia.org/wiki/File:Lake_kivu_Rusizi.jpg) | Aline rw | CC BY-SA 4.0 | Caption on /about |
 
 The CC BY-SA "share-alike" condition applies to modified versions of these photos. We only resize them and apply a CSS overlay.

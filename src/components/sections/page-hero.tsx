@@ -24,7 +24,7 @@ export function PageHero({
   eyebrow: string
   title: string
   lead?: string
-  image?: { src: string; alt: string; caption?: string }
+  image?: { src: string; alt: string; caption?: string; position?: string }
   /** Badges, filters or metadata rendered under the lead. */
   children?: React.ReactNode
   className?: string
@@ -68,6 +68,7 @@ export function PageHero({
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 preload
                 reveal
+                imageClassName={image.position}
                 className="aspect-[16/10] w-full shadow-[0_30px_80px_-30px_rgb(0_0_0/0.45)] lg:aspect-[4/5]"
               >
                 {image.caption ? <PhotoCaption>{image.caption}</PhotoCaption> : null}

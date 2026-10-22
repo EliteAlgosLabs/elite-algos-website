@@ -548,8 +548,8 @@ export const fr: Dictionary = {
     ctaAlt: 'Un ordinateur portable qui brille doucement dans une pièce sombre',
     servicesAlt: 'Des lignes de code sur l’écran d’un ordinateur, dans une pièce sombre',
     solutionsAlt: 'Un réseau lumineux de blocs connectés',
-    aboutAlt: 'Vue aérienne du Kigali Convention Centre et de ses jardins verdoyants, à Kigali, au Rwanda',
-    aboutCaption: 'Kigali Convention Centre · Photo : Emmanuel Kwizera, CC BY-SA 4.0',
+    aboutAlt: 'Le lac Kivu serpentant entre des collines verdoyantes sous un ciel lumineux, à l’ouest du Rwanda',
+    aboutCaption: 'Lac Kivu, Rwanda · Photo : Aline rw, CC BY-SA 4.0',
     contactAlt: 'Un espace de travail calme et lumineux, avec des plantes et un ordinateur près de la fenêtre',
     marquee: [
       'Assistants IA',

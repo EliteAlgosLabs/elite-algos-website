@@ -551,8 +551,8 @@ export const en = {
     ctaAlt: 'A laptop glowing softly in a dark room',
     servicesAlt: 'Lines of code on a laptop screen in a dark room',
     solutionsAlt: 'A glowing network of connected blocks',
-    aboutAlt: 'Aerial view of the Kigali Convention Centre and its green gardens, Kigali, Rwanda',
-    aboutCaption: 'Kigali Convention Centre · Photo: Emmanuel Kwizera, CC BY-SA 4.0',
+    aboutAlt: 'Lake Kivu winding between green hills under a bright sky, western Rwanda',
+    aboutCaption: 'Lake Kivu, Rwanda · Photo: Aline rw, CC BY-SA 4.0',
     contactAlt: 'A calm, light-filled workspace with plants and a laptop by the window',
     marquee: [
       'AI assistants',

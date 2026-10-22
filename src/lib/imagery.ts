@@ -22,7 +22,7 @@ export const IMAGES = {
   pages: {
     services: '/images/hero-services.jpg',
     solutions: '/images/hero-solutions.jpg',
-    about: '/images/kigali-convention-aerial.jpg',
+    about: '/images/rwanda-lake-kivu.jpg',
     contact: '/images/hero-contact.jpg',
   },
   /** Keyed by content slug. A slug with no entry renders no photo. */
