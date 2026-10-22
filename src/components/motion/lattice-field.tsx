@@ -38,7 +38,14 @@ type Node = {
   radius: number
 }
 
-export function LatticeField({ className }: { className?: string }) {
+export function LatticeField({
+  className,
+  onMedia = false,
+}: {
+  className?: string
+  /** Over photography: always use the bright champagne palette, in either theme. */
+  onMedia?: boolean
+}) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -65,11 +72,18 @@ export function LatticeField({ className }: { className?: string }) {
     let nodeColor = '198, 166, 100'
     let linkColor = '198, 166, 100'
 
+    // Over photography the mesh has to cut through texture, so it is drawn
+    // brighter and heavier. On the page background the subtle defaults stand.
+    const linkBase = onMedia ? 0.7 : 0.16
+    const nodeBase = onMedia ? 0.9 : 0.3
+    const lineWidth = onMedia ? 1 : 0.6
+    const nodeScale = onMedia ? 1.6 : 1
+
     function readThemeColors() {
-      const isDark = document.documentElement.dataset.theme === 'dark'
+      const isDark = onMedia || document.documentElement.dataset.theme === 'dark'
       // Champagne on graphite, brushed gold on ivory.
-      nodeColor = isDark ? '227, 206, 159' : '169, 133, 63'
-      linkColor = isDark ? '198, 166, 100' : '138, 106, 47'
+      nodeColor = onMedia ? '255, 236, 190' : isDark ? '227, 206, 159' : '169, 133, 63'
+      linkColor = onMedia ? '240, 214, 160' : isDark ? '198, 166, 100' : '138, 106, 47'
     }
 
     function seed() {
@@ -132,8 +146,8 @@ export function LatticeField({ className }: { className?: string }) {
           const boost =
             cursorDistance < CURSOR_RADIUS ? (1 - cursorDistance / CURSOR_RADIUS) * 0.55 : 0
 
-          ctx!.strokeStyle = `rgba(${linkColor}, ${(proximity * 0.16 + boost * proximity).toFixed(3)})`
-          ctx!.lineWidth = 0.6
+          ctx!.strokeStyle = `rgba(${linkColor}, ${Math.min(1, proximity * linkBase + boost * proximity).toFixed(3)})`
+          ctx!.lineWidth = lineWidth
           ctx!.beginPath()
           ctx!.moveTo(a.x, a.y)
           ctx!.lineTo(b.x, b.y)
@@ -147,9 +161,9 @@ export function LatticeField({ className }: { className?: string }) {
         const distance = Math.sqrt(dx * dx + dy * dy)
         const boost = distance < CURSOR_RADIUS ? (1 - distance / CURSOR_RADIUS) * 0.5 : 0
 
-        ctx!.fillStyle = `rgba(${nodeColor}, ${(0.3 + boost).toFixed(3)})`
+        ctx!.fillStyle = `rgba(${nodeColor}, ${Math.min(1, nodeBase + boost).toFixed(3)})`
         ctx!.beginPath()
-        ctx!.arc(node.x, node.y, node.radius + boost * 0.9, 0, Math.PI * 2)
+        ctx!.arc(node.x, node.y, node.radius * nodeScale + boost * 0.9, 0, Math.PI * 2)
         ctx!.fill()
       }
     }
@@ -231,7 +245,7 @@ export function LatticeField({ className }: { className?: string }) {
       window.removeEventListener('pointerleave', onPointerLeave)
       document.removeEventListener('visibilitychange', onVisibility)
     }
-  }, [])
+  }, [onMedia])
 
   return (
     <canvas

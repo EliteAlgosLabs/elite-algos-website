@@ -364,6 +364,17 @@
   }
 }
 
+/* Tech overlay scan line: sweeps top to bottom, then pauses off-frame. */
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  70%,
+  100% {
+    transform: translateY(100%);
+  }
+}
+
 /* Scroll cue in the hero. */
 @keyframes scroll-hint {
   0%,

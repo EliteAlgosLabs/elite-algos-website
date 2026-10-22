@@ -58,6 +58,11 @@ export default async function AboutPage({ params }: PageProps<'/[locale]/about'>
           src: IMAGES.pages.about,
           alt: dict.imagery.aboutAlt,
           caption: dict.imagery.aboutCaption,
+          tech: {
+            label: dict.imagery.aboutTechLabel,
+            coordinates: '1.9403° S · 29.8739° E',
+            tags: dict.imagery.aboutTechTags,
+          },
         }}
       />
 

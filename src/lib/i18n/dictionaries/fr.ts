@@ -548,8 +548,10 @@ export const fr: Dictionary = {
     ctaAlt: 'Un ordinateur portable qui brille doucement dans une pièce sombre',
     servicesAlt: 'Des lignes de code sur l’écran d’un ordinateur, dans une pièce sombre',
     solutionsAlt: 'Un réseau lumineux de blocs connectés',
-    aboutAlt: 'Des plantations de thé en terrasses sur les collines verdoyantes de l’ouest du Rwanda',
+    aboutAlt: 'Collines de thé en terrasses de l’ouest du Rwanda, sous un réseau doré et lumineux de points connectés',
     aboutCaption: 'Rwanda',
+    aboutTechLabel: 'Conçu au Rwanda',
+    aboutTechTags: ['IA', 'Logiciel', 'Cloud'],
     contactAlt: 'Un espace de travail calme et lumineux, avec des plantes et un ordinateur près de la fenêtre',
     marquee: [
       'Assistants IA',
