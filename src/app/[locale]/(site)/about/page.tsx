@@ -58,8 +58,6 @@ export default async function AboutPage({ params }: PageProps<'/[locale]/about'>
           src: IMAGES.pages.about,
           alt: dict.imagery.aboutAlt,
           caption: dict.imagery.aboutCaption,
-          // Wide panorama in a tall frame: keep the lake (left third) in view.
-          position: 'object-[22%_50%]',
         }}
       />
 

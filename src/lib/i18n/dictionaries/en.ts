@@ -551,8 +551,8 @@ export const en = {
     ctaAlt: 'A laptop glowing softly in a dark room',
     servicesAlt: 'Lines of code on a laptop screen in a dark room',
     solutionsAlt: 'A glowing network of connected blocks',
-    aboutAlt: 'Lake Kivu winding between green hills under a bright sky, western Rwanda',
-    aboutCaption: 'Lake Kivu, Rwanda · Photo: Aline rw, CC BY-SA 4.0',
+    aboutAlt: 'Green terraced tea plantations on rolling hills in western Rwanda',
+    aboutCaption: 'Rwanda',
     contactAlt: 'A calm, light-filled workspace with plants and a laptop by the window',
     marquee: [
       'AI assistants',
@@ -574,7 +574,6 @@ export const en = {
     legalTitle: 'Legal',
     incorporation: 'Incorporation no.',
     rights: 'All rights reserved.',
-    photoCredits: 'Imagery: Unsplash, Mixkit and Wikimedia Commons. Credits shown where required.',
     privacy: 'Privacy',
     terms: 'Terms',
     builtWith: 'Designed and engineered in-house.',

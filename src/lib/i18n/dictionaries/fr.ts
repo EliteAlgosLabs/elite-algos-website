@@ -548,8 +548,8 @@ export const fr: Dictionary = {
     ctaAlt: 'Un ordinateur portable qui brille doucement dans une pièce sombre',
     servicesAlt: 'Des lignes de code sur l’écran d’un ordinateur, dans une pièce sombre',
     solutionsAlt: 'Un réseau lumineux de blocs connectés',
-    aboutAlt: 'Le lac Kivu serpentant entre des collines verdoyantes sous un ciel lumineux, à l’ouest du Rwanda',
-    aboutCaption: 'Lac Kivu, Rwanda · Photo : Aline rw, CC BY-SA 4.0',
+    aboutAlt: 'Des plantations de thé en terrasses sur les collines verdoyantes de l’ouest du Rwanda',
+    aboutCaption: 'Rwanda',
     contactAlt: 'Un espace de travail calme et lumineux, avec des plantes et un ordinateur près de la fenêtre',
     marquee: [
       'Assistants IA',
@@ -571,7 +571,6 @@ export const fr: Dictionary = {
     legalTitle: 'Mentions légales',
     incorporation: 'N° d’immatriculation',
     rights: 'Tous droits réservés.',
-    photoCredits: 'Visuels : Unsplash, Mixkit et Wikimedia Commons. Crédits indiqués lorsque requis.',
     privacy: 'Confidentialité',
     terms: 'Conditions',
     builtWith: 'Conçu et développé en interne.',

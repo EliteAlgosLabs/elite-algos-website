@@ -32,10 +32,10 @@ All assets are self-hosted copies, resized and recompressed for the web.
 Clips marked "Mixkit Restricted License" are personal use only. **Do not use them.**
 Before adding any Mixkit clip, check that `copyrightNotice` is `Free` in the page's metadata.
 
-## Wikimedia Commons: attribution required
+## Wikimedia Commons: CC0 (public domain dedication, no attribution required)
 
-| File | Source | Author | Licence | Where credited |
-|---|---|---|---|---|
-| rwanda-lake-kivu.jpg | [File:Lake kivu Rusizi.jpg](https://commons.wikimedia.org/wiki/File:Lake_kivu_Rusizi.jpg) | Aline rw | CC BY-SA 4.0 | Caption on /about |
+| File | Source |
+|---|---|
+| rwanda-tea-hills.jpg | [File:Tea plantation, Western Rwanda.jpg](https://commons.wikimedia.org/wiki/File:Tea_plantation,_Western_Rwanda.jpg), CC0 |
 
-The CC BY-SA "share-alike" condition applies to modified versions of these photos. We only resize them and apply a CSS overlay.
+**Policy:** the site uses only assets that need no on-page credit (Unsplash License, Mixkit Free, CC0 or public domain). Do not add CC BY or CC BY-SA images.

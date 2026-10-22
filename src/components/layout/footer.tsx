@@ -114,9 +114,6 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             </p>
           ) : null}
         </div>
-        <p className="pb-8 font-mono text-[0.5625rem] leading-relaxed tracking-[0.06em] text-muted/70">
-          {dict.footer.photoCredits}
-        </p>
       </Container>
     </footer>
   )
