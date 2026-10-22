@@ -36,6 +36,6 @@ Before adding any Mixkit clip, check that `copyrightNotice` is `Free` in the pag
 
 | File | Source |
 |---|---|
-| rwanda-tea-hills.jpg | [File:Tea plantation, Western Rwanda.jpg](https://commons.wikimedia.org/wiki/File:Tea_plantation,_Western_Rwanda.jpg), CC0 |
+| rwanda-skyline.jpg | [File:Sunset kigali.jpg](https://commons.wikimedia.org/wiki/File:Sunset_kigali.jpg), CC0. Right edge cropped. |
 
 **Policy:** the site uses only assets that need no on-page credit (Unsplash License, Mixkit Free, CC0 or public domain). Do not add CC BY or CC BY-SA images.

@@ -58,6 +58,8 @@ export default async function AboutPage({ params }: PageProps<'/[locale]/about'>
           src: IMAGES.pages.about,
           alt: dict.imagery.aboutAlt,
           caption: dict.imagery.aboutCaption,
+          // Keep the towers and the sunset break in the tall desktop frame.
+          position: 'object-[42%_50%]',
           tech: {
             label: dict.imagery.aboutTechLabel,
             coordinates: '1.9403° S · 29.8739° E',

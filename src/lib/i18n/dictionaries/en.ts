@@ -551,7 +551,7 @@ export const en = {
     ctaAlt: 'A laptop glowing softly in a dark room',
     servicesAlt: 'Lines of code on a laptop screen in a dark room',
     solutionsAlt: 'A glowing network of connected blocks',
-    aboutAlt: 'Green terraced tea hills in western Rwanda, overlaid with a glowing gold network of connected points',
+    aboutAlt: 'City skyline at sunset in Rwanda, glass towers against a gold-lit sky, overlaid with a glowing gold network of connected points',
     aboutCaption: 'Rwanda',
     aboutTechLabel: 'Engineered in Rwanda',
     aboutTechTags: ['AI', 'Software', 'Cloud'],
