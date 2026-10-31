@@ -82,8 +82,19 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-black/70 via-black/25 to-transparent"
         />
 
-        {/* 3. Lattice */}
-        <LatticeField className="-z-10 opacity-60 mix-blend-screen" />
+        {/* 3. Lattice: the same bright on-media network as the About hero */}
+        <LatticeField onMedia className="-z-10 opacity-90" />
+
+        {/* 3b. Scan line (same as the About hero), motion-safe, transform-only */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 hidden overflow-hidden motion-safe:block"
+        >
+          <div className="absolute inset-x-0 top-0 h-full motion-safe:animate-[scan_7s_cubic-bezier(0.45,0,0.55,1)_infinite]">
+            <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent to-gold-300/25" />
+            <div className="absolute inset-x-0 bottom-0 h-px bg-gold-200/80 shadow-[0_0_14px_2px_rgb(227_206_159/0.6)]" />
+          </div>
+        </div>
 
         {/* 4. Spotlight */}
         {!reduced ? (
